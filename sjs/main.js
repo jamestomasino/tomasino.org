@@ -8,35 +8,21 @@ window.console||(window.console={log:function(){}});
 
 // Load Handlebars templates and json data
 var sectionTemplatePath = 'templates/section.handlebars';
-var itemTemplatePath = 'templates/item.handlebars';
 var dataPath = 'data/data.json';
 
 $.when (
 	$.ajax ( sectionTemplatePath ),
-	$.ajax ( itemTemplatePath ),
 	$.getJSON ( dataPath ),
 	$(document).ready()
 ).then( onDataLoad, onDataFail );
 
-function onDataLoad ( section, item, data ) {
+function onDataLoad ( section, data ) {
 	var sectionHTML = section[0];
-	var itemHTML = item[0];
-	var jsonData = data[0];
 	var sectionTemplate  = Handlebars.compile(sectionHTML);
-	var itemTemplate     = Handlebars.compile(itemHTML);
+	var jsonData = data[0];
 
-	// Process Data
-	$.each ( jsonData.section, function ( index, data) {
-		var html = $(sectionTemplate(data));
-		var items = html.find('.items');
-
-		$.each ( data.item, function ( index, data ) {
-			var itemHTML = $(itemTemplate(data));
-			items.append(itemHTML);
-		} );
-
-		$('#links').append(html);
-	} );
+	var html = $(sectionTemplate(jsonData));
+	$('#links').append(html);
 }
 
 function onDataFail ( error ) {
