@@ -2,3 +2,24 @@
 @import "fonts";
 
 @include establish-baseline;
+
+.category {
+
+	h1 {
+		@include adjust-font-size-to(36px);
+	}
+
+	a {
+		text-decoration: none;
+		color: $link-color;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+
+	h2 {
+		@include adjust-font-size-to(18px);
+		text-transform: lowercase;
+		text-align: center;
+	}
+}
