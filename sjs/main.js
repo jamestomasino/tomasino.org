@@ -14,7 +14,8 @@ var dataPath = 'data/data.json';
 $.when (
 	$.ajax ( sectionTemplatePath ),
 	$.ajax ( itemTemplatePath ),
-	$.getJSON ( dataPath )
+	$.getJSON ( dataPath ),
+	$(document).ready()
 ).then( onDataLoad, onDataFail );
 
 function onDataLoad ( section, item, data ) {
