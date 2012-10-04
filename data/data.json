@@ -1,0 +1,242 @@
+{
+  "xml": {
+    "cat": [
+      {
+        "-id": "personal",
+        "item": [
+          {
+            "id": "blog",
+            "image": "images/blog.jpg",
+            "url": "http://blog.tomasino.org",
+            "title": "Personal Blog"
+          },
+          {
+            "id": "chimp",
+            "image": "images/chimp.jpg",
+            "url": "http://tomasino.mp",
+            "title": "Chi.mp Social Hub"
+          },
+          {
+            "id": "reader",
+            "image": "images/reader.jpg",
+            "url": "http://www.google.com/reader/shared/04204636476658866346",
+            "title": "Google Reader"
+          },
+          {
+            "id": "dopplr",
+            "image": "images/dopplr.jpg",
+            "url": "http://www.dopplr.com/traveller/tomasino",
+            "title": "Dopplr Travel Tracker"
+          }
+        ]
+      },
+      {
+        "-id": "professional",
+        "item": [
+          {
+            "id": "portfolio",
+            "image": "images/portfolio.jpg",
+            "url": "http://www.jamestomasino.com",
+            "title": "Portfolio"
+          },
+          {
+            "id": "blog",
+            "image": "images/blog.jpg",
+            "url": "http://labs.tomasino.org",
+            "title": "Professional Blog"
+          },
+          {
+            "id": "linkedin",
+            "image": "images/linkedin.jpg",
+            "url": "http://www.linkedin.com/in/jamestomasino",
+            "title": "LinkedIn"
+          },
+          {
+            "id": "ceevee",
+            "image": "images/ceevee.jpg",
+            "url": "http://www.ceevee.com/james.tomasino",
+            "title": "CeeVee"
+          },
+          {
+            "id": "visualcv",
+            "image": "images/visualcv.jpg",
+            "url": "http://www.visualcv.com/users/231547-jamestomasino/cvs/274184",
+            "title": "Visual CV"
+          },
+          {
+            "id": "experts",
+            "image": "images/experts.jpg",
+            "url": "http://www.experts-exchange.com/M_5926046.html",
+            "title": "Experts-Exchange"
+          },
+          {
+            "id": "delicious",
+            "image": "images/delicious.jpg",
+            "url": "http://www.delicious.com/jamestomasino",
+            "title": "Delicious"
+          }
+        ]
+      },
+      {
+        "-id": "charity",
+        "item": [
+          {
+            "id": "kiva",
+            "image": "images/kiva.jpg",
+            "url": "http://www.kiva.org/lender/tomasino",
+            "title": "Kiva Loans"
+          },
+          {
+            "id": "vittana",
+            "image": "images/vittana.jpg",
+            "url": "http://vittana.org/users/2759",
+            "title": "Vittana Loans"
+          }
+        ]
+      },
+      {
+        "-id": "books",
+        "item": [
+          {
+            "id": "amazon",
+            "image": "images/amazon.jpg",
+            "url": "http://www.amazon.com/gp/registry/wishlist/13LCYOWDIUHZF",
+            "title": "Amazon Wishlist"
+          },
+          {
+            "id": "goodreads",
+            "image": "images/goodreads.jpg",
+            "url": "http://www.goodreads.com/user/show/1204542-james",
+            "title": "Goodreads"
+          }
+        ]
+      },
+      {
+        "-id": "video",
+        "item": [
+          {
+            "id": "vimeo",
+            "image": "images/vimeo.jpg",
+            "url": "http://www.vimeo.com/jamestomasino",
+            "title": "Vimeo"
+          },
+          {
+            "id": "youtube",
+            "image": "images/youtube.jpg",
+            "url": "http://www.youtube.com/user/jamestomasino",
+            "title": "Youtube"
+          },
+          {
+            "id": "hulu",
+            "image": "images/hulu.jpg",
+            "url": "http://www.hulu.com/profiles/tomasino?cb=1300139423",
+            "title": "Hulu"
+          }
+        ]
+      },
+      {
+        "-id": "audio",
+        "item": [
+          {
+            "id": "lastfm",
+            "image": "images/lastfm.jpg",
+            "url": "http://www.last.fm/user/jamestomasino",
+            "title": "Last.FM"
+          },
+          {
+            "id": "pandora",
+            "image": "images/pandora.jpg",
+            "url": "http://www.pandora.com/people/pandora71265",
+            "title": "Pandora Radio"
+          }
+        ]
+      },
+      {
+        "-id": "presence",
+        "item": [
+          {
+            "id": "yelp",
+            "image": "images/yelp.jpg",
+            "url": "http://tomasino.yelp.com",
+            "title": "Yelp"
+          },
+          {
+            "id": "foursquare",
+            "image": "images/foursquare.jpg",
+            "url": "http://foursquare.com/mr_ino",
+            "title": "Foursquare"
+          }
+        ]
+      },
+      {
+        "-id": "pictures",
+        "item": [
+          {
+            "id": "flickr",
+            "image": "images/flickr.jpg",
+            "url": "http://www.flickr.com/photos/tomasino",
+            "title": "Flickr"
+          },
+          {
+            "id": "picasa",
+            "image": "images/picasa.jpg",
+            "url": "http://picasaweb.google.com/107807838448525082027",
+            "title": "Picasa"
+          }
+        ]
+      },
+      {
+        "-id": "geneology",
+        "item": [
+          {
+            "id": "geni",
+            "image": "images/geni.jpg",
+            "url": "http://www.geni.com/people/James-Tomasino/6000000000076251476",
+            "title": "Geni"
+          },
+          {
+            "id": "ancestry",
+            "image": "images/ancestry.jpg",
+            "url": "http://community.ancestry.com/profile.aspx?mba=016c3018-0003-0000-0000-000000000000",
+            "title": "Ancestry"
+          }
+        ]
+      },
+      {
+        "-id": "social",
+        "item": [
+          {
+            "id": "facebook",
+            "image": "images/facebook.jpg",
+            "url": "http://www.facebook.com/james.tomasino?p",
+            "title": "Facebook"
+          },
+          {
+            "id": "twitter",
+            "image": "images/twitter.jpg",
+            "url": "http://www.twitter.com/mr_ino",
+            "title": "Twitter"
+          },
+          {
+            "id": "tumblr",
+            "image": "images/tumblr.jpg",
+            "url": "http://tumblr.tomasino.org",
+            "title": "Tumblr"
+          },
+          {
+            "id": "chess",
+            "image": "images/chess.jpg",
+            "url": "http://www.chessatwork.com/profile/playerprofile.php?uid=365425",
+            "title": "Chess at Work"
+          },
+          {
+            "id": "boardgamegeek",
+            "image": "images/boardgamegeek.jpg",
+            "url": "http://boardgamegeek.com/user/tomasino",
+            "title": "Board Game Geek"
+          }
+        ]
+      }
+    ]
+  }
+}
