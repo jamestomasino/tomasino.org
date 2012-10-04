@@ -10,12 +10,6 @@
 					"title": "Personal Blog"
 				},
 				{
-					"id": "chimp",
-					"image": "images/chimp.jpg",
-					"url": "http://tomasino.mp",
-					"title": "Chi.mp Social Hub"
-				},
-				{
 					"id": "reader",
 					"image": "images/reader.jpg",
 					"url": "http://www.google.com/reader/shared/04204636476658866346",
@@ -49,18 +43,6 @@
 					"image": "images/linkedin.jpg",
 					"url": "http://www.linkedin.com/in/jamestomasino",
 					"title": "LinkedIn"
-				},
-				{
-					"id": "ceevee",
-					"image": "images/ceevee.jpg",
-					"url": "http://www.ceevee.com/james.tomasino",
-					"title": "CeeVee"
-				},
-				{
-					"id": "visualcv",
-					"image": "images/visualcv.jpg",
-					"url": "http://www.visualcv.com/users/231547-jamestomasino/cvs/274184",
-					"title": "Visual CV"
 				},
 				{
 					"id": "experts",
@@ -99,7 +81,7 @@
 				{
 					"id": "amazon",
 					"image": "images/amazon.jpg",
-					"url": "http://www.amazon.com/gp/registry/wishlist/13LCYOWDIUHZF",
+					"url": "http://www.amazon.com/registry/wishlist/2TFDH239TQFIF",
 					"title": "Amazon Wishlist"
 				},
 				{
@@ -187,12 +169,6 @@
 		{
 			"id": "geneology",
 			"item": [
-				{
-					"id": "geni",
-					"image": "images/geni.jpg",
-					"url": "http://www.geni.com/people/James-Tomasino/6000000000076251476",
-					"title": "Geni"
-				},
 				{
 					"id": "ancestry",
 					"image": "images/ancestry.jpg",
