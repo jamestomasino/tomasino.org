@@ -36,7 +36,7 @@
 					"id": "blog",
 					"image": "images/blog.jpg",
 					"url": "http://labs.tomasino.org",
-					"title": "Professional Blog"
+					"title": "Labs Blog"
 				},
 				{
 					"id": "linkedin",
@@ -118,6 +118,7 @@
 		{
 			"id": "audio",
 			"item": [
+
 				{
 					"id": "lastfm",
 					"image": "images/lastfm.jpg",
@@ -167,17 +168,6 @@
 			]
 		},
 		{
-			"id": "geneology",
-			"item": [
-				{
-					"id": "ancestry",
-					"image": "images/ancestry.jpg",
-					"url": "http://community.ancestry.com/profile.aspx?mba=016c3018-0003-0000-0000-000000000000",
-					"title": "Ancestry"
-				}
-			]
-		},
-		{
 			"id": "social",
 			"item": [
 				{
@@ -193,6 +183,17 @@
 					"title": "Tumblr"
 				},
 				{
+					"id": "ancestry",
+					"image": "images/ancestry.jpg",
+					"url": "http://community.ancestry.com/profile.aspx?mba=016c3018-0003-0000-0000-000000000000",
+					"title": "Ancestry"
+				}
+			]
+		},
+		{
+			"id": "games",
+			"item": [
+				{
 					"id": "chess",
 					"image": "images/chess.jpg",
 					"url": "http://www.chessatwork.com/profile/playerprofile.php?uid=365425",
@@ -206,5 +207,6 @@
 				}
 			]
 		}
+
 	]
 }
