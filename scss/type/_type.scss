@@ -7,6 +7,10 @@
 
 	h1 {
 		@include adjust-font-size-to(36px);
+
+		@media screen and (max-width: 480px) {
+			@include adjust-font-size-to(24px);
+		}
 	}
 
 	a {
@@ -21,5 +25,9 @@
 		@include adjust-font-size-to(18px);
 		text-transform: lowercase;
 		text-align: center;
+		
+		@media screen and (max-width: 480px) {
+			@include adjust-font-size-to(14px);
+		}
 	}
 }

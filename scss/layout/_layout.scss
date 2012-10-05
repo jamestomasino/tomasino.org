@@ -15,5 +15,11 @@
 		@include leader();
 		padding-left: 10px;
 		padding-right: 10px;
+		max-width: 20%;
+		vertical-align: top;
+
+		img {
+			max-width: 100%;
+		}
 	}
 }
