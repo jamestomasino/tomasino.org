@@ -33,10 +33,16 @@
 					"title": "Portfolio"
 				},
 				{
-					"id": "blog",
+					"id": "labsblog",
 					"image": "images/blog.jpg",
 					"url": "http://labs.tomasino.org",
 					"title": "Labs Blog"
+				},
+				{
+					"id": "github",
+					"image": "images/github.jpg",
+					"url": "https://github.com/jamestomasino",
+					"title": "GitHub"
 				},
 				{
 					"id": "linkedin",
@@ -187,6 +193,18 @@
 					"image": "images/ancestry.jpg",
 					"url": "http://community.ancestry.com/profile.aspx?mba=016c3018-0003-0000-0000-000000000000",
 					"title": "Ancestry"
+				},
+				{
+					"id": "diaspora",
+					"image": "images/diaspora.jpg",
+					"url": "https://diasp.org/u/tomasino",
+					"title": "Diaspora"
+				},
+				{
+					"id": "fitocracy",
+					"image": "images/fitocracy.jpg",
+					"url": "https://www.fitocracy.com/profile/jamestomasino/",
+					"title": "Fitocracy"
 				}
 			]
 		},
