@@ -57,6 +57,12 @@
 					"title": "CoderBits"
 				},
 				{
+					"id": "codepen",
+					"image": "images/codepen.jpg",
+					"url": "http://codepen.io/jamestomasino",
+					"title": "CodePen"
+				},
+				{
 					"id": "experts",
 					"image": "images/experts.jpg",
 					"url": "http://www.experts-exchange.com/M_5926046.html",
