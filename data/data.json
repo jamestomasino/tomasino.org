@@ -51,6 +51,12 @@
 					"title": "LinkedIn"
 				},
 				{
+					"id": "coderbits",
+					"image": "images/coderbits.jpg",
+					"url": "https://coderbits.com/coder/jamestomasino",
+					"title": "CoderBits"
+				},
+				{
 					"id": "experts",
 					"image": "images/experts.jpg",
 					"url": "http://www.experts-exchange.com/M_5926046.html",
