@@ -16,10 +16,10 @@
 					"title": "Google Reader"
 				},
 				{
-					"id": "dopplr",
+					"id": "tripit",
 					"image": "images/dopplr.jpg",
-					"url": "http://www.dopplr.com/traveller/tomasino",
-					"title": "Dopplr Travel Tracker"
+					"url": "https://www.tripit.com/people/james.tomasino",
+					"title": "Tripit Travel Tracker"
 				}
 			]
 		},
@@ -67,12 +67,6 @@
 					"image": "images/experts.jpg",
 					"url": "http://www.experts-exchange.com/M_5926046.html",
 					"title": "Experts-Exchange"
-				},
-				{
-					"id": "delicious",
-					"image": "images/delicious.jpg",
-					"url": "http://www.delicious.com/jamestomasino",
-					"title": "Delicious"
 				}
 			]
 		},
@@ -193,12 +187,6 @@
 					"image": "images/twitter.jpg",
 					"url": "http://www.twitter.com/mr_ino",
 					"title": "Twitter"
-				},
-				{
-					"id": "tumblr",
-					"image": "images/tumblr.jpg",
-					"url": "http://tumblr.tomasino.org",
-					"title": "Tumblr"
 				},
 				{
 					"id": "ancestry",
