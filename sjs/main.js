@@ -1,6 +1,6 @@
-//= require lib/jquery-1.8.2
-//= require lib/handlebars-1.0.rc.1
-//= require lib/l10n
+//= require analytics
+
+var analytics = new Analytics( 'UA-18127227-1' );
 
 window.console||(window.console={log:function(){}});
 
