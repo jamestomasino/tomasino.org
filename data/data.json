@@ -189,6 +189,12 @@
 					"title": "Twitter"
 				},
 				{
+					"id": "hackernews",
+					"image": "images/hackernews.jpg",
+					"url": "https://news.ycombinator.com/user?id=jamestomasino",
+					"title": "Hacker News"
+				},
+				{
 					"id": "ancestry",
 					"image": "images/ancestry.jpg",
 					"url": "http://community.ancestry.com/profile.aspx?mba=016c3018-0003-0000-0000-000000000000",
