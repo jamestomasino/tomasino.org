@@ -10,12 +10,6 @@
 					"title": "Personal Blog"
 				},
 				{
-					"id": "reader",
-					"image": "images/reader.jpg",
-					"url": "http://www.google.com/reader/shared/04204636476658866346",
-					"title": "Google Reader"
-				},
-				{
 					"id": "tripit",
 					"image": "images/dopplr.jpg",
 					"url": "https://www.tripit.com/people/james.tomasino",
@@ -67,23 +61,6 @@
 					"image": "images/experts.jpg",
 					"url": "http://www.experts-exchange.com/M_5926046.html",
 					"title": "Experts-Exchange"
-				}
-			]
-		},
-		{
-			"id": "charity",
-			"item": [
-				{
-					"id": "kiva",
-					"image": "images/kiva.jpg",
-					"url": "http://www.kiva.org/lender/tomasino",
-					"title": "Kiva Loans"
-				},
-				{
-					"id": "vittana",
-					"image": "images/vittana.jpg",
-					"url": "http://vittana.org/users/2759",
-					"title": "Vittana Loans"
 				}
 			]
 		},
