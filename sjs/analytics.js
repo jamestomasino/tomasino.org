@@ -24,6 +24,7 @@
 		} else {
 			window.ga('create', id);
 		}
+
 		window.ga('send', 'pageview');
 
 		// Hijack links to enable tracking. Use on syntax since dom will change
@@ -41,11 +42,16 @@
 				document.location = href;
 			} else {
 				// Send tracking link then navigate.
-				ga('send', 'event', 'link', 'click', text, {
-					'hitCallback': function() {
-						document.location = href;
-					}
-				} );
+				if (ga) {
+					ga('send', 'event', 'link', 'click', text, {
+						'hitCallback': function() {
+							document.location = href;
+						}
+					} );
+				} else {
+					// tracker blocked, navigate
+					document.location = href;
+				}
 			}
 			return false;
 		}
