@@ -1,67 +1,108 @@
-(function(window, document, $) {
+(function (window, document) {
 	"use strict";
 
-	var Analytics = function ( id ) {
+	/*************************************************************************/
+	/***************************** Analytics *********************************/
+	/*************************************************************************/
+
+	/* This lib is a bit of overkill if you're only using a single analytics
+	* toolset, like GoogleAnalytics. If you are using multiple, you can
+	* connect them here and use the same methods to drive each. */
+
+	var Analytics = function ( google_id ) {
 
 		// Add Google Analytics script tag
 		(function (win, doc, o, url, r, a, m) {
-			win['GoogleAnalyticsObject'] = r;
+			win.GoogleAnalyticsObject = r;
 			win[r] = win[r] || function () {
-				(win[r].q = win[r].q || []).push(arguments)
-			}, win[r].l = 1 * new Date();
-			a = doc.createElement(o),
+				(win[r].q = win[r].q || []).push(arguments);
+			};
+			win[r].l = 1 * new Date();
+			a = doc.createElement(o);
 			m = doc.getElementsByTagName(o)[0];
 			a.async = 1;
 			a.src = url;
-			m.parentNode.insertBefore(a, m)
+			m.parentNode.insertBefore(a, m);
 		})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
 		// Set up Tracking object (allow localhost testing)
 		if (/localhost/i.test(document.location.origin)) {
-			window.ga('create', id, {
-			  'cookieDomain': 'none'
+			window.ga('create', google_id, {
+				'cookieDomain': 'none'
 			});
 		} else {
-			window.ga('create', id);
+			window.ga('create', google_id);
 		}
-
 		window.ga('send', 'pageview');
 
-		// Hijack links to enable tracking. Use on syntax since dom will change
-		$(document).on('click touchend', 'a', trackLink )
+		// Automatically hijack exit links
+		if (window.addEventListener)
+			document.body.addEventListener("click",this.onBodyClick,false);
+		else
+			document.body.attachEvent("onclick",this.onBodyClick);
+	};
 
-		function trackLink (event) {
-			event.preventDefault();
-			var context = $(this).context;
-			var text = context.text;
-			var href = context.href;
-			var tag = event.currentTarget.outerHTML;
-
-			// Ignore anchor links from tracking.
-			if ( /href\=("|')#/i.test(tag) ) {
-				document.location = href;
-			} else {
-				// Send tracking link then navigate.
-				if (ga) {
-					ga('send', 'event', 'link', 'click', text, {
-						'hitCallback': function() {
-							document.location = href;
-						}
-					} );
-				} else {
-					// tracker blocked, navigate
-					document.location = href;
-				}
-			}
-			return false;
-		}
-	}
 	var p = Analytics.prototype;
 
-	p.trackTime = function ( component, time ) {
-		ga( 'send', 'timing', 'component', component, time );
-	}
+	p.onBodyClick = function (event) {
+		var el = event.srcElement || event.target;
+
+		/* Loop up the DOM tree through parent elements if clicked element is not a link (eg: an image inside a link) */
+		while(el && (typeof el.tagName === 'undefined' || el.tagName.toLowerCase() !== 'a' || !el.href)){
+			el = el.parentNode;
+		}
+
+		if(el && el.href){
+			var link = el.href;
+			if(link.indexOf(location.host) === -1 && !link.match(/^javascript\:/i)) {
+				var hitBack = function(link, target){
+					if (target) {
+						window.open(link, target);
+					} else {
+						window.location.href = link;
+					}
+				};
+				var target = (el.target && !el.target.match(/^_(self|parent|top)$/i)) ? el.target : false;
+				window.ga(
+					"send", "event", "Exit Link", link,
+					document.location.pathname + document.location.search,
+					{"hitCallback": hitBack(link, target)}
+				);
+
+				if (event.preventDefault) {
+					event.preventDefault();
+				} else {
+					event.returnValue = false;
+				}
+			}
+		}
+	};
+
+	p.trackTime = function ( category, variable, value, label) {
+		var trackObj = {
+			'timingCategory': category,
+			'timingVar': variable
+		};
+
+		if (typeof value === 'number') trackObj.timingValue = value;
+		if (typeof label !== 'undefined') trackObj.timingLabel = label;
+
+		window.ga('send', 'timing', trackObj );
+	};
+
+	p.trackEvent = function ( category, action, label, value ) {
+		var trackObj = {
+			'hitType': 'event',
+			'eventCategory': category,
+			'eventAction': action
+		};
+
+		if (typeof label !== 'undefined') trackObj.eventLabel = label;
+		if (typeof value === 'number' && value >= 0) trackObj.eventValue = value;
+
+		window.ga('send', trackObj, {'nonInteraction': 1});
+	};
 
 	window.Analytics = Analytics;
 
-})(window, document, jQuery);
+})(window, document);
