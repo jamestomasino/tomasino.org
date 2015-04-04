@@ -1,4 +1,4 @@
-(function () {
+(function (NS) {
 	"use strict";
 
 	/*************************************************************************/
@@ -48,24 +48,30 @@
 		var el = event.srcElement || event.target;
 
 		/* Loop up the DOM tree through parent elements if clicked element is not a link (eg: an image inside a link) */
-		while(el && (typeof el.tagName == 'undefined' || el.tagName.toLowerCase() != 'a' || !el.href)){
+		while(el && (typeof el.tagName === 'undefined' || el.tagName.toLowerCase() !== 'a' || !el.href)){
 			el = el.parentNode;
 		}
 
 		if(el && el.href){
 			var link = el.href;
-			if(link.indexOf(location.host) == -1 && !link.match(/^javascript\:/i)) {
+			if(link.indexOf(location.host) === -1 && !link.match(/^javascript\:/i)) {
 				var hitBack = function(link, target){
-					target ? window.open(link, target) : window.location.href = link;
+					if (target)
+						window.open(link, target)
+					else
+						window.location.href = link;
 				};
 				var target = (el.target && !el.target.match(/^_(self|parent|top)$/i)) ? el.target : false;
-				ga(
+				window.ga(
 					"send", "event", "Exit Link", link,
 					document.location.pathname + document.location.search,
 					{"hitCallback": hitBack(link, target)}
 				);
 
-				event.preventDefault ? event.preventDefault() : event.returnValue = false;
+				if (event.preventDefault)
+					event.preventDefault()
+				else
+					event.returnValue = false;
 			}
 		}
 	};
@@ -76,10 +82,10 @@
 			'timingVar': variable
 		};
 
-		if (typeof value == 'number') trackObj.timingValue = value;
+		if (typeof value === 'number') trackObj.timingValue = value;
 		if (typeof label !== 'undefined') trackObj.timingLabel = label;
 
-		ga('send', 'timing', trackObj );
+		window.ga('send', 'timing', trackObj );
 	};
 
 	p.trackEvent = function ( category, action, label, value ) {
@@ -90,12 +96,12 @@
 		};
 
 		if (typeof label !== 'undefined') trackObj.eventLabel = label;
-		if (typeof value == 'number' && value >= 0) trackObj.eventValue = value;
+		if (typeof value === 'number' && value >= 0) trackObj.eventValue = value;
 
-		ga('send', trackObj, {'nonInteraction': 1});
+		window.ga('send', trackObj, {'nonInteraction': 1});
 	};
 
 	var namespace = new NS ( 'lib' );
 	namespace.Analytics = Analytics;
 
-})();
+})(window.NS);
