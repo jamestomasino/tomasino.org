@@ -1,7 +1,5 @@
-(function () {
+(function (NS) {
 	"use strict"
-
-	NS.load ( ['lib.Delegate'], classWrapper, this );
 
 	function classWrapper() {
 
@@ -10,11 +8,11 @@
 		function Ajax(url, callbackFunction, errorFunction)
 		{
 			this.stateChange = function (object) {
-				if (this.request.readyState==4)
+				if (this.request.readyState === 4)
 					if (this.request.status === 200) {
 						this.callbackFunction(this.request.responseText);
 					} else {
-						if (typeof this.errorFunction == 'function') this.errorFunction(this.request.statusText);
+						if (typeof this.errorFunction === 'function') this.errorFunction(this.request.statusText);
 					}
 			};
 			this.postBody = (arguments[3] || "");
@@ -45,4 +43,6 @@
 
 	}
 
-})();
+	NS.load ( ['lib.Delegate'], classWrapper, this );
+
+})(window.NS);
