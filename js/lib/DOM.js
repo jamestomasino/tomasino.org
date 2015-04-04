@@ -37,6 +37,50 @@
 		return o;
 	};
 
+	DOM.remove = function ( el ) {
+		el = (typeof el === 'string') ? DOM.find(el) : el;
+		if (el) {
+			if (el.length) {
+				var i = el.length; while (i--);
+				if (el[i] && el[i].parentNode)
+					el[i].parentNode.removeChild(el[i]);
+			} else {
+				el.parentNode.removeChild(el);
+			}
+		}
+	};
+
+	DOM.removeClass = function ( el, classname ) {
+		el = (typeof el === 'string') ? DOM.find(el) : el;
+		if (el) {
+			var exp1 = /(?:^|\s)/;
+			var exp2 = /(?!\S)/g;
+			var exp  = new RegExp(exp1.source + classname + exp2.source);
+			if (el.length) {
+				var i=el.length; while (i--) {
+					el[i].className = el[i].className.replace( exp, '' );
+				}
+			} else {
+				el.className = el.className.replace( exp, '' );
+			}
+		}
+	};
+
+	DOM.addClass = function ( el, classname ) {
+		el = (typeof el === 'string') ? DOM.find(el) : el;
+		if (el) {
+			if (el.length) {
+				var i=el.length; while (i--) {
+					if (el[i].className.indexOf(classname) === -1)
+						el[i].className = (el[i].className === "") ? classname : el[i].className + " " + classname;
+				}
+			} else {
+				if (el.className.indexOf(classname) === -1)
+					el.className = (el.className === "") ? classname : el.className + " " + classname;
+			}
+		}
+	}
+
 	var namespace = new NS ( 'lib' );
 	namespace.DOM = DOM;
 
