@@ -1,6 +1,3 @@
-require "susy"
-require "sassy-buttons"
-
 module Sass::Script::Functions
     def randomColor()
         Sass::Script::String.new("#%06x" % (rand * 0xffffff))
