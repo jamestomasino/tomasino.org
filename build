@@ -1,3 +1,0 @@
-#!/bin/bash
-# Compile Sass/Compass/Susy Compressed
-compass compile --output-style compressed --force
