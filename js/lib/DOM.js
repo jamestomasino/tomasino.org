@@ -1,4 +1,4 @@
-(function () {
+(function (NS) {
 
 	var DOM = {};
 
@@ -24,7 +24,7 @@
 	DOM.find = function( a, b ){
 		var c = a.match(/^(\W)?(.*)/);
 		var o;
-		var select = "getElement" + ( c[1] ? c[1] == "#" ? "ById" : "sByClassName" : "sByTagName");
+		var select = "getElement" + ( c[1] ? c[1] === "#" ? "ById" : "sByClassName" : "sByTagName");
 
 		if (select === "getElementsByClassName" && ! document.getElementsByClassName) {
 			o = ( b || document )["querySelectorAll"]( a );
@@ -40,4 +40,4 @@
 	var namespace = new NS ( 'lib' );
 	namespace.DOM = DOM;
 
-})();
+})(window.NS);
