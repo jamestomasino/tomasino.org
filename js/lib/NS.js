@@ -1,4 +1,4 @@
-(function() {
+(function(window) {
 	(function() {
 		if (!window.console) {
 			window.console = {};
@@ -29,7 +29,7 @@
 		return parent;
 	}
 
-	NS.global = (function(){ return this || (1,eval)('this') })();
+	NS.global = window;
 	NS.baseURL = '';
 
 	// Loading Process Sequence
@@ -53,14 +53,12 @@
 				currentPart = parts[i];
 				if ( typeof parent[currentPart] === 'undefined') {
 					throw ('ERROR::[ Namespace improperly loaded: ' + NSString + ' ]' );
-					return null;
 				}
 				parent = parent[currentPart];
 			}
 			return parent;
 		} else {
 			throw ('ERROR::[ Namespace does not exist: ' + NSString + ' ]' );
-			return null;
 		}
 	}
 
@@ -74,7 +72,7 @@
 				var NSObj = {};
 				NSObj.id = NSStrings[i];
 				NSObj.path = NSObj.id;
-				while (NSObj.path.indexOf('.') != -1) {
+				while (NSObj.path.indexOf('.') !== -1) {
 					NSObj.path = NSObj.path.replace('.', '/');
 				}
 				NSObj.path = NS.baseURL + NSObj.path + '.js';
@@ -144,7 +142,7 @@
 		if (NS.queue.length) {
 			NS.processQueue();
 		} else if (NS.loading.length) {
-			// Do nothing until all loads complete
+			return;
 		} else if (NS.loaded.length) {
 			NS.processLoaded();
 		} else if (NS.callbacks.length) {
@@ -223,4 +221,4 @@
 
 	NS.global.NS = NS;
 
-})();
+})(window);

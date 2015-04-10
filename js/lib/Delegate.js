@@ -1,4 +1,4 @@
-(function(){
+(function(NS){
 	"use strict";
 
 	var namespace = new NS ( 'lib' );
@@ -8,4 +8,4 @@
 		};
 	};
 
-})();
+})(window.NS);
