@@ -1,15 +1,15 @@
 {{#each section}}
-	<section class="category">
+	<div class="category">
 		<h1>{{id}}</h1>
 		<div class="items">
 		{{#each item}}
-			<section class="item" id="{{id}}">
+			<div class="item" id="{{id}}">
 				<a href="{{url}}">
 					<img src="{{image}}" alt="{{id}}" />
 					<h2>{{title}}</h2>
 				</a>
-			</section>
+			</div>
 		{{/each item}}
 		</div>
-	</section>
+	</div>
 {{/each section}}
