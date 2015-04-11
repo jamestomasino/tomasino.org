@@ -6,20 +6,26 @@ var libs = [ 'lib.Ajax', 'lib.Delegate', 'lib.DOM', 'lib.Analytics', 'lib.Templa
 
 function main () {
 
+	// Imports
 	var Ajax = NS.use('lib.Ajax');
 	var Analytics = NS.use('lib.Analytics');
 	var Delegate = NS.use('lib.Delegate');
 	var DOM = NS.use('lib.DOM');
 	var Template = NS.use('lib.Template');
 
+	// Paths
+	var dataPath = 'data/data.json';
+	var templatePath = 'template/data.template';
+
 	this.data = null;
 	this.template = null;
+	this.mainWrapper = DOM.find('#links');
 
 	function onDataLoad ( data ) {
 		this.data = JSON.parse(data);
 
 		if (this.data && this.template)
-			buildDOM(this.template, this.data);
+			this.mainWrapper.appendChild( DOM.create( Template(this.template, this.data) ) );
 	}
 
 	function onTemplateLoad ( template ) {
@@ -27,30 +33,25 @@ function main () {
 		this.template = String(template).replace(/\n/g,'');
 
 		if (this.data && this.template)
-			buildDOM(this.template, this.data);
+			this.mainWrapper.appendChild( DOM.create( Template(this.template, this.data) ) );
 	}
 
 	function onDataFail ( error ) {
-		var mainWrapper = DOM.find('#links');
-		var DOMtestEl = DOM.create('<h1 class="error">There was an error loading site data.</h1>');
-		mainWrapper.appendChild(DOMtestEl);
+		var errorString = '<h1 class="error">There was an error loading site data.</h1>';
+		this.mainWrapper.appendChild( DOM.create(errorString) );
 	}
 
-	function buildDOM ( template, data ) {
-		var outputHTML = Template(template, data);
-		var mainWrapper = DOM.find('#links');
-		var domEL = DOM.create(outputHTML);
-		mainWrapper.appendChild(domEL);
-	}
+	// Delegate Callbacks
+	var dataLoadDelegate = Delegate(onDataLoad, this);
+	var dataFailDelegate = Delegate(onDataFail, this);
+	var templateLoadDelegate = Delegate(onTemplateLoad, this);
 
+	// Load Data & Template
+	var dataAjax = new Ajax(dataPath, dataLoadDelegate, dataFailDelegate);
+	var templateAjax = new Ajax(templatePath, templateLoadDelegate, dataFailDelegate);
+
+	// Set up Analytics
 	var analytics = new Analytics ( 'UA-18127227-1' );
-
-	var dataPath = 'data/data.json';
-	var dataAjax = new Ajax(dataPath, Delegate(onDataLoad, this), onDataFail);
-
-	var templatePath = 'template/data.template';
-	var templateAjax = new Ajax(templatePath, Delegate(onTemplateLoad, this), onDataFail);
-
 }
 
 NS.load ( libs, main, this );
