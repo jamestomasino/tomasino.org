@@ -2,17 +2,32 @@ var NS = window.NS;
 
 NS.baseURL = 'js/';
 
-var libs = [ 'lib.Ajax', 'lib.DOM', 'lib.Analytics', 'lib.Template' ];
+var libs = [ 'lib.Ajax', 'lib.Delegate', 'lib.DOM', 'lib.Analytics', 'lib.Template' ];
 
 function main () {
 
 	var Ajax = NS.use('lib.Ajax');
 	var Analytics = NS.use('lib.Analytics');
+	var Delegate = NS.use('lib.Delegate');
 	var DOM = NS.use('lib.DOM');
-	var T = NS.use('lib.Template');
+	var Template = NS.use('lib.Template');
+
+	this.data = null;
+	this.template = null;
 
 	function onDataLoad ( data ) {
-		buildDOM(JSON.parse(data));
+		this.data = JSON.parse(data);
+
+		if (this.data && this.template)
+			buildDOM(this.template, this.data);
+	}
+
+	function onTemplateLoad ( template ) {
+		// Remove newlines for the regex to parse properly
+		this.template = String(template).replace(/\n/g,'');
+
+		if (this.data && this.template)
+			buildDOM(this.template, this.data);
 	}
 
 	function onDataFail ( error ) {
@@ -21,30 +36,20 @@ function main () {
 		mainWrapper.appendChild(DOMtestEl);
 	}
 
-	function buildDOM ( data ) {
-		var categoryStartTemplate = '<div class="category"><h1>{id}</h1><div class="items">'
-		var categoryEndTemplate = '</div></div>'
-		var itemTemplate = '<div class="item" id="{id}"><a href="{url}"><img src="{image}" alt="{id}" /><h2>{title}</h2></a></div>';
-
-		var outputHTML = '';
-		var sections = data.section;
-		for (var i=0; i < sections.length; i++) {
-			outputHTML += T(categoryStartTemplate, sections[i]);
-			var items = sections[i].item;
-			for (var j=0; j < items.length; j++) {
-				outputHTML += T(itemTemplate, items[j]);
-			}
-			outputHTML += categoryEndTemplate;
-		}
-
+	function buildDOM ( template, data ) {
+		var outputHTML = Template(template, data);
 		var mainWrapper = DOM.find('#links');
 		var domEL = DOM.create(outputHTML);
 		mainWrapper.appendChild(domEL);
 	}
 
 	var analytics = new Analytics ( 'UA-18127227-1' );
+
 	var dataPath = 'data/data.json';
-	var ajax = new Ajax(dataPath, onDataLoad, onDataFail);
+	var dataAjax = new Ajax(dataPath, Delegate(onDataLoad, this), onDataFail);
+
+	var templatePath = 'template/data.template';
+	var templateAjax = new Ajax(templatePath, Delegate(onTemplateLoad, this), onDataFail);
 
 }
 
