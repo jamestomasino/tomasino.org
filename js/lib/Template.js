@@ -7,7 +7,7 @@
 		};
 	}
 
-	var matcheach = /\{\{\s*\#each\s*(.*?)\}\}(.*)\{{\s*\/\s*each\s*\1\}\}/ig;
+	var matcheach = /\{\{\s*\#each\s*(.*?)\}\}(.*)\{{\s*\/\s*each\s*\1\}\}/gi;
 	var matchpre = /\{\{\s*/;
 	var matchsuf = /\s*\}\}/;
 
@@ -30,7 +30,7 @@
 		}
 
 		function e(template,data) {
-
+			matcheach.lastIndex=0; // Reset for ie8
 			var each = matcheach.exec(template);
 			var trim = template.replace(matcheach, '{{TEMPLATE-$1}}');
 			var output = '';
