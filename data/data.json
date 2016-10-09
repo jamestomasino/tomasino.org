@@ -1,41 +1,6 @@
 {
 	"section": [
 		{
-			"id": "personal",
-			"item": [
-				{
-					"id": "blog",
-					"image": "images/blog.jpg",
-					"url": "https://blog.tomasino.org",
-					"title": "Personal Blog"
-				},
-				{
-					"id": "map",
-					"image": "images/map.jpg",
-					"url": "https://map.tomasino.org",
-					"title": "Mortum Caelum Map"
-				},
-				{
-					"id": "obscure",
-					"image": "images/obscure.jpg",
-					"url": "https://obscure.tomasino.org",
-					"title": "Text Obfuscation"
-				},
-				{
-					"id": "retreat",
-					"image": "images/retreat.jpg",
-					"url": "https://retreat.tomasino.org",
-					"title": "Retreat"
-				},
-				{
-					"id": "tripit",
-					"image": "images/dopplr.jpg",
-					"url": "https://www.tripit.com/people/james.tomasino",
-					"title": "Tripit Travel Tracker"
-				}
-			]
-		},
-		{
 			"id": "professional",
 			"item": [
 				{
@@ -67,6 +32,41 @@
 					"image": "images/experts.jpg",
 					"url": "http://www.experts-exchange.com/M_5926046.html",
 					"title": "Experts-Exchange"
+				}
+			]
+		},
+		{
+			"id": "personal",
+			"item": [
+				{
+					"id": "blog",
+					"image": "images/blog.jpg",
+					"url": "https://blog.tomasino.org",
+					"title": "Personal Blog"
+				},
+				{
+					"id": "deprofundis",
+					"image": "images/deprofundis.jpg",
+					"url": "https://deprofundis.tomasino.org",
+					"title": "De Profundis Coorespondence RPG"
+				},
+				{
+					"id": "map",
+					"image": "images/map.jpg",
+					"url": "https://map.tomasino.org",
+					"title": "Mortum Caelum Novel Map"
+				},
+				{
+					"id": "obscure",
+					"image": "images/obscure.jpg",
+					"url": "https://obscure.tomasino.org",
+					"title": "Text Obfuscation Utility"
+				},
+				{
+					"id": "retreat",
+					"image": "images/retreat.jpg",
+					"url": "https://retreat.tomasino.org",
+					"title": "Web Retreat Utility"
 				}
 			]
 		},
