@@ -6,8 +6,26 @@
 				{
 					"id": "blog",
 					"image": "images/blog.jpg",
-					"url": "http://blog.tomasino.org",
+					"url": "https://blog.tomasino.org",
 					"title": "Personal Blog"
+				},
+				{
+					"id": "map",
+					"image": "images/map.jpg",
+					"url": "https://map.tomasino.org",
+					"title": "Mortum Caelum Map"
+				},
+				{
+					"id": "obscure",
+					"image": "images/obscure.jpg",
+					"url": "https://obscure.tomasino.org",
+					"title": "Text Obfuscation"
+				},
+				{
+					"id": "retreat",
+					"image": "images/retreat.jpg",
+					"url": "https://retreat.tomasino.org",
+					"title": "Retreat"
 				},
 				{
 					"id": "tripit",
@@ -22,8 +40,8 @@
 			"item": [
 				{
 					"id": "labsblog",
-					"image": "images/blog.jpg",
-					"url": "http://labs.tomasino.org",
+					"image": "images/labs.jpg",
+					"url": "https://labs.tomasino.org",
 					"title": "Labs Blog"
 				},
 				{
