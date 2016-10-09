@@ -48,25 +48,25 @@
 					"id": "deprofundis",
 					"image": "images/deprofundis.jpg",
 					"url": "https://deprofundis.tomasino.org",
-					"title": "De Profundis Coorespondence RPG"
+					"title": "De Profundis"
 				},
 				{
 					"id": "map",
 					"image": "images/map.jpg",
 					"url": "https://map.tomasino.org",
-					"title": "Mortum Caelum Novel Map"
+					"title": "Novel Map"
 				},
 				{
 					"id": "obscure",
 					"image": "images/obscure.jpg",
 					"url": "https://obscure.tomasino.org",
-					"title": "Text Obfuscation Utility"
+					"title": "Text Obscurer"
 				},
 				{
 					"id": "retreat",
 					"image": "images/retreat.jpg",
 					"url": "https://retreat.tomasino.org",
-					"title": "Web Retreat Utility"
+					"title": "Retreat Utility"
 				}
 			]
 		},
