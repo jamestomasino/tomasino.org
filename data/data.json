@@ -102,6 +102,12 @@
 					"image": "images/fitocracy.jpg",
 					"url": "https://www.fitocracy.com/profile/jamestomasino/",
 					"title": "Fitocracy"
+				},
+				{
+					"id": "reddit",
+					"image": "images/reddit.jpg",
+					"url": "https://www.reddit.com/user/jamestomasino",
+					"title": "Reddit"
 				}
 			]
 		},
@@ -188,6 +194,12 @@
 					"image": "images/picasa.jpg",
 					"url": "http://picasaweb.google.com/107807838448525082027",
 					"title": "Picasa"
+				},
+				{
+					"id": "mojave",
+					"image": "images/mojave.jpg",
+					"url": "https://mojaveapp.com/#/user/jamestomasino",
+					"title": "Mojave Links"
 				}
 			]
 		},
