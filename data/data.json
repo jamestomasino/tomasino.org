@@ -4,6 +4,12 @@
 			"id": "professional",
 			"item": [
 				{
+					"id": "resume",
+					"image": "images/portfolio.jpg",
+					"url": "https://www.jamestomasino.com",
+					"title": "Resume"
+				},
+				{
 					"id": "labsblog",
 					"image": "images/labs.jpg",
 					"url": "https://labs.tomasino.org",
