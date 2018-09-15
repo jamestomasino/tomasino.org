@@ -1,15 +1,5 @@
-#=================================================================================
-# Setup
-#=================================================================================
-
-install:
-	s3_website cfg apply --config-dir "$$HOME/.s3config/www.tomasino.org/"
-
-#=================================================================================
-# Deployment
-#=================================================================================
-
 deploy:
-	s3_website push --site=. --config-dir "$$HOME/.s3config/www.tomasino.org/"
+	rsync -rvhe ssh --progress --delete --exclude=Makefile --exclude=.git* . tomasino.org:/var/www/www.tomasino.org/
 
+.PHONY: deploy
 #  vim: set shiftwidth=4 tabstop=4 noexpandtab:
