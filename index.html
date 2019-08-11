@@ -11,10 +11,12 @@
     <style>
       a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video{margin:0;padding:0;border:0;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}
       body{line-height:1;font-family:"Consolas",monospace;font-size:14px;margin:3% 5%;width:90%;max-width:500px;background:#303030;color:#c1c1c1}
-      ul{list-style:square;margin-left:1.575rem}
+      ul{list-style-type: none;margin-left:1rem;}
+      ul>li:before {content:"-";position:absolute;margin-left:-1.1rem;}
       a{text-decoration:none;color:cyan}
       h1{line-height:100%;margin-bottom:.7575rem}
-      h1,h2,h3,h4,h5,h6{line-height:100%;margin-top:2rem}
+      p{margin-bottom:.75rem}
+      h1,h2,h3,h4,h5,h6{line-height:100%;margin-top:2rem;margin-bottom:1rem;}
       h1:before{content:"# "}
       h2:before{content:"## "}
       h3:before{content:"### "}
@@ -24,15 +26,22 @@
     </style>
   </head>
 
-  <body>
+  <body class="h-card">
 
     <h1>Tomasino (dot) Org</h1>
 
-    <p class="h-card">
-      Hi, my name is <span class="p-name">James Tomasino</span> and I do things on the internet. Here's some of the places you can find me.
+    <p>
+      Hi, my name is <span class="p-name">James Tomasino</span> and I do things on the internet.
     </p>
 
     <h2>Professional</h2>
+    <p class="p-note">I've worked in web technologies since the early 2000s. I
+    have experience across industries including pharmaceuticals, government,
+    oil, and consumer advertising. In that time I've been a developer,
+    designer, user experience architect, dev-ops engineer, data analyst,
+    experience design innovator, digital strategist, and more. For the last
+    several years I've had teams at multiple offices across multiple cities
+    reporting to me as their technology director.</p>
     <ul>
       <li><a rel="me" class="u-url" href="https://www.jamestomasino.com">Resume Website</a></li>
       <li><a rel="me" class="u-url" href="https://labs.tomasino.org">Labs Blog</a></li>
@@ -41,6 +50,9 @@
     </ul>
 
     <h2>Personal</h2>
+    <p class="p-note">
+    My most passionate hobbies include retro-computing, fiction writing, travel, and hiking.
+    </p>
     <ul>
       <li><a rel="me" class="u-url" href="https://blog.tomasino.org">Blog</a></li>
       <li><a href="gopher://gopher.black">Gopher Site</a></li>
@@ -48,6 +60,11 @@
     </ul>
 
     <h2>Social</h2>
+    <p class="p-note">
+    I've moved away from most of the major social networks but have found a welcome home in the
+    <a href="https://en.wikipedia.org/wiki/Fediverse" rel="noreferrer">Fediverse</a>. I also stay
+    active on technical boards to keep my skills sharp.
+    </p>
     <ul>
       <li><a rel="me" href="https://mastodon.sdf.org/@tomasino">Mastodon</a></li>
       <li><a href="https://news.ycombinator.com/user?id=jamestomasino">Hackernews</a></li>
@@ -55,6 +72,10 @@
     </ul>
 
     <h2>Books</h2>
+    <p class="p-note">
+    I'm an avid reader and challenge my self to read more every year. I love fiction, especially
+    the fantasy genre, but my tastes are fairly eclectic.</p>
+    </p>
     <ul>
       <li><a rel="me" class="u-url" href="https://www.goodreads.com/user/show/1204542-james">Goodreads</a></li>
       <li><a href="https://www.amazon.com/registry/wishlist/2TFDH239TQFIF">Amazon</a></li>
@@ -69,6 +90,11 @@
     <ul>
       <li><a href="https://www.redhotpawn.com/chess-player/tomasino">Chess</a></li>
       <li><a href="https://boardgamegeek.com/user/tomasino">Board Game Geek</a></li>
+    </ul>
+
+    <h2>Email</h2>
+    <ul>
+      <li><a rel="me" class="u-email" href="mailto:james@my-last-name-dot-org">james @ my-last-name-dot-org</a>
     </ul>
 
   </body>
