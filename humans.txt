@@ -1,5 +1,5 @@
 # TEAM
-	James Tomasino - @tomasino@mastodon.sdf.org
+	James Tomasino - @tomasino@tilde.zone
 
 # SITE
 	Language: English
