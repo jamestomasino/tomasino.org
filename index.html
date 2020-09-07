@@ -20,10 +20,10 @@
 			h1{line-height:100%;margin-bottom:.7575rem}
 			p{margin-bottom:.75rem}
 			h1,h2,h3,h4,h5,h6{line-height:100%;margin-top:2rem;margin-bottom:1rem;}
-			h1:before{content:"# "}
-			h1:after{content:"-----";display:block;}
-			h2:before{content:"## "}
-			h3:before{content:"### "}
+			h1:before{content:"# ";content:"# " / "";}
+			h1:after{content:"-----";content:"-----" / "";display:block;}
+			h2:before{content:"## ";content:"## " / "";}
+			h3:before{content:"### ";content:"### " / "";}
 			@media (prefers-color-scheme: light) {
 				body{background:#ebd7d5;color:#40302f;}
 				a{color:#039680}
