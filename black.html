@@ -1,0 +1,1368 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Tilde Black</title>
+		<meta charset=utf-8>
+		<meta http-equiv=X-UA-Compatible content="IE=edge">
+		<meta name=viewport content="shrink-to-fit=no,width=device-width,height=device-height,initial-scale=1,user-scalable=1">
+		<meta name="description" content="The black hole of the tildeverse">
+		<link rel='stylesheet' href='black/styles.css'>
+		<link rel='canonical' href='https://tilde.black/' />
+		<link rel='icon' href='favicon.ico' type='image/x-icon' />
+		<script defer src="/samizdat.js"></script>
+	</head>
+	<body>
+		<nav id='main-nav' class='link-grid'>
+			<div class='links'>
+				<a href='#intro'>Home</a>
+				<a href='#about'>About</a>
+				<a href='#docs'>Guides</a>
+				<a href='#features'>Features</a>
+				<a href='#users'>User Pages</a>
+			</div>
+			<a class="menubutton open" href="#main-nav" aria-label="Open menu"></a>
+			<a class="menubutton close" href="#" aria-label="Close menu"></a>
+		</nav>
+		<section id="intro">
+			<h1>Tilde Black</h1>
+			<h2>The black hole of the tildeverse</h2>
+			<div class="icon"><img src="assets/black-hole.svg" alt="Icon of a Black Hole"/></div>
+			<div class="copy">
+				<p>This site is available on tor at: <a href="http://black6kfjetfuzaeozz7fs53whh7xtd4e27telrf5fg5kgdt5ah5plad.onion">black...jetfuz...onion</a></p>
+				<p>Tilde (~) servers are public access unix systems in the spirit of
+				<a href="https://tilde.club" rel="noreferrer">tilde.club</a>, which was created by Paul Ford
+				in 2014. Member status on a tilde server mainly involves some level of
+				engagement or presence on the system, but that activity may take a number
+				of forms (eg, learning OpenBSD, coding, community discussions).</p>
+
+				<p>The <a href="https://tildeverse.org" rel="noreferrer">tildeverse</a> is a loosely connected
+				system of like-minded tildes that share some services. An
+				<a href="https://tilde.chat" rel="noreferrer">IRC network</a> helps keep the community
+				together. You can find members of this server in the #black channel.</p>
+
+				<p><strong><a href="docs/sign-up/">Read how to join Tilde Black.</a></strong></p>
+			</div>
+		</section>
+
+		<section id="about">
+			<h3>About the Black</h3>
+			<div class="copy">
+				<div class="intro">
+					<p>Tilde Black is an OpenBSD system themed to support the ideas of
+					privacy, anonymity, and security. The server itself is run by an amateur
+					hobbiest and should not be considered ultra-secure itself. Rather, the
+					ideals put into practice are done so as an experiment to test their
+					validity, efficacy, and identify problems.</p>
+
+					<p>The ideals of the Black are important for the safety of individual
+					freedom around the world and are not intended to be used for nefarious
+					purposes. <strong>Infiltration, network scanning, and other
+						&ldquo;hacking&rdquo; activities will result in membership being
+						disabled.</strong></p>
+				</div>
+				<div class="terms">
+					<div class="term">
+						<dl>
+							<dt>Privacy</dt>
+							<dd>A place of seclusion from company or observation; retreat;
+							solitude; retirement.</dd>
+							<dd>Concealment of what is said or done.</dd>
+							<dd>A private matter; a secret.</dd>
+						</dl>
+
+						<p>This is the fundamental idea that serves as justification for the
+						others. Individuals
+						<a href="https://www.abebooks.com/9780679724735/Secrets-Ethics-Concealment-Revelation-Sissela-0679724737/plp" rel="noreferrer">
+							require secrecy</a> for a healthy life. One of our goals is to discuss
+						new ways to ensure privacy in a digital age.</p>
+						<hr>
+						<p>On the system, Tilde Black preserves read access to user home
+						directories for those members alone. Users may assume a level of privacy
+						from others on the system.</p>
+						<p>While many tildes focus on community building and peer relationships,
+						the Black prefers privacy. Members should feel comfortable in thinking
+						of the server as their home where they are free to be themselves. While
+						engagement in discussions, IRC, net news, web or gopher publishing is
+						possible, it is not required.</p>
+					</div>
+
+					<div class="term">
+						<dl>
+							<dt>Anonymity</dt>
+							<dd>The state of being anonymous.</dd>
+							<dd>Having no known name or identity or known source.</dd>
+						</dl>
+
+						<p>Surveillance states and surveillance capitalism watch us constantly.
+						The profiles they build have an unprecedented level of understanding
+						about our behavior, wants, and needs. This is a critical violation of
+						individual privacy. One remedy is anonymity.</p>
+						<hr>
+						<p>On Tilde Black, over 10,000 user accounts have been pre-generated at
+						system creation. These accounts are based on 4 and 5 letter dictionary
+						words. When a <a href="/docs/sign-up/">new user requests membership</a> 
+						on the system, 10 of these accounts are assigned to the new member at
+						random. These are full, real system accounts, not simple aliases. They
+						can be used individually or in aggregate to mask activity and preserve
+						identity. If a user desires more than 10, additional accounts can be
+						assigned upon request.</p> <p>Access to Tilde Black is available as a
+						<a href="/docs/ssh-over-tor/">Tor hidden service</a>, complete with SSH
+						access.</p>
+					</div>
+
+					<div class="term">
+						<dl>
+							<dt>Security</dt>
+							<dd>Freedom from risk; safety.</dd>
+							<dd>The state of being free from danger or injury.</dd>
+							<dd>Measures taken as a precaution against theft or espionage or sabotage.</dd>
+							<dd>Protection against unauthorized access to, or alteration of, information.</dd>
+						</dl>
+
+						<p>Maintaining security is one of the most difficult and ever-changing
+						tasks in our increasingly connected world. So much of our lives are
+						affected by large information systems which are not in our control. What
+						measures can we take as individuals to mitigate our risk and preserve our
+						safety?</p>
+						<hr>
+						<p>One of the goals of Tilde Black is to create original content geared
+						toward this purpose in the form of guides. These guides are community
+						driven through activity on the net news system, IRC, email, and other
+						communication systems. The end result are attempts to help make the
+						individual a bit more secure.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="docs">
+			<h3>Guides</h3>
+			<div class="copy">
+				<p>The most public parts of Tilde Black are the <a href="docs/">Guides
+					and Documentation</a> generated by users. To get started, you can
+				try one of the introductory articles on how to use Tilde Black itself:</p>
+			</div>
+			<ul>
+				<li><a href="docs/sign-up/">How to join Tilde Black</a></li>
+				<li><a href="docs/ssh-over-tor/">How to ssh over tor</a></li>
+			</ul>
+		</section>
+
+		<section id="features">
+			<h3>Features</h3>
+			<div class="copy">
+				<p>The Black comes packed with a number of services for its members.
+				Each of these can be used by any and all of the anonymous user accounts
+				assigned at sign-up. Some members may choose to use only a single service
+				with each user account while others maintain a &ldquo;master&rdquo; user
+				that acts across the system.</p>
+			</div>
+			<ul>
+				<li>Secure web hosting</li>
+				<li>Gemini hosting</li>
+				<li>Gopher hosting</li>
+				<li>Email</li>
+				<li>Tor hidden services (ssh, http, gopher, gemini) </li>
+				<li>NNTP private discussion boards</li>
+				<li>Guide authoring</li>
+				<li>Programming tools</li>
+				<li>More upon request</li>
+			</ul>
+		</section>
+
+		<section id="users">
+			<h3>Users:</h3>
+			<ul>
+<li><a href="#">~abaff</a></li>
+<li><a href="#">~abask</a></li>
+<li><a href="#">~abbas</a></li>
+<li><a href="#">~abed </a></li>
+<li><a href="#">~ablow</a></li>
+<li><a href="#">~aboma</a></li>
+<li><a href="#">~abord</a></li>
+<li><a href="#">~acedy</a></li>
+<li><a href="#">~achor</a></li>
+<li><a href="#">~aclys</a></li>
+<li><a href="#">~acock</a></li>
+<li><a href="#">~acoin</a></li>
+<li><a href="#">~acone</a></li>
+<li><a href="#">~adad </a></li>
+<li><a href="#">~adawn</a></li>
+<li><a href="#">~adays</a></li>
+<li><a href="#">~adion</a></li>
+<li><a href="#">~adjag</a></li>
+<li><a href="#">~adlay</a></li>
+<li><a href="#">~adman</a></li>
+<li><a href="#">~adnex</a></li>
+<li><a href="#">~adopt</a></li>
+<li><a href="#">~adorn</a></li>
+<li><a href="#">~adust</a></li>
+<li><a href="#">~afoot</a></li>
+<li><a href="#">~agamy</a></li>
+<li><a href="#">~agape</a></li>
+<li><a href="#">~aglet</a></li>
+<li><a href="#">~agoho</a></li>
+<li><a href="#">~agone</a></li>
+<li><a href="#">~agush</a></li>
+<li><a href="#">~ahind</a></li>
+<li><a href="#">~ahint</a></li>
+<li><a href="#">~aile </a></li>
+<li><a href="#">~aiwan</a></li>
+<li><a href="#">~akund</a></li>
+<li><a href="#">~alamo</a></li>
+<li><a href="#">~aleph</a></li>
+<li><a href="#">~alibi</a></li>
+<li><a href="#">~alin </a></li>
+<li><a href="#">~alist</a></li>
+<li><a href="#">~alite</a></li>
+<li><a href="#">~alme </a></li>
+<li><a href="#">~along</a></li>
+<li><a href="#">~aloof</a></li>
+<li><a href="#">~altar</a></li>
+<li><a href="#">~alter</a></li>
+<li><a href="#">~alure</a></li>
+<li><a href="#">~amah </a></li>
+<li><a href="#">~amapa</a></li>
+<li><a href="#">~ambit</a></li>
+<li><a href="#">~ambon</a></li>
+<li><a href="#">~ameen</a></li>
+<li><a href="#">~ament</a></li>
+<li><a href="#">~amil </a></li>
+<li><a href="#">~ammo </a></li>
+<li><a href="#">~amuck</a></li>
+<li><a href="#">~anabo</a></li>
+<li><a href="#">~angry</a></li>
+<li><a href="#">~anime</a></li>
+<li><a href="#">~ansar</a></li>
+<li><a href="#">~antes</a></li>
+<li><a href="#">~anury</a></li>
+<li><a href="#">~apart</a></li>
+<li><a href="#">~apian</a></li>
+<li><a href="#">~apism</a></li>
+<li><a href="#">~araca</a></li>
+<li><a href="#">~arati</a></li>
+<li><a href="#">~ardeb</a></li>
+<li><a href="#">~ardu </a></li>
+<li><a href="#">~arena</a></li>
+<li><a href="#">~arist</a></li>
+<li><a href="#">~arles</a></li>
+<li><a href="#">~arms </a></li>
+<li><a href="#">~aroar</a></li>
+<li><a href="#">~arrah</a></li>
+<li><a href="#">~array</a></li>
+<li><a href="#">~aspen</a></li>
+<li><a href="#">~aster</a></li>
+<li><a href="#">~atlee</a></li>
+<li><a href="#">~atoke</a></li>
+<li><a href="#">~atone</a></li>
+<li><a href="#">~attic</a></li>
+<li><a href="#">~attid</a></li>
+<li><a href="#">~audit</a></li>
+<li><a href="#">~aught</a></li>
+<li><a href="#">~aurae</a></li>
+<li><a href="#">~ausu </a></li>
+<li><a href="#">~avahi</a></li>
+<li><a href="#">~avail</a></li>
+<li><a href="#">~avera</a></li>
+<li><a href="#">~awned</a></li>
+<li><a href="#">~awner</a></li>
+<li><a href="#">~azure</a></li>
+<li><a href="#">~azury</a></li>
+<li><a href="#">~babby</a></li>
+<li><a href="#">~bade </a></li>
+<li><a href="#">~bagel</a></li>
+<li><a href="#">~bahan</a></li>
+<li><a href="#">~baize</a></li>
+<li><a href="#">~banda</a></li>
+<li><a href="#">~banky</a></li>
+<li><a href="#">~barbe</a></li>
+<li><a href="#">~barer</a></li>
+<li><a href="#">~barry</a></li>
+<li><a href="#">~bases</a></li>
+<li><a href="#">~batty</a></li>
+<li><a href="#">~batz </a></li>
+<li><a href="#">~baud </a></li>
+<li><a href="#">~beach</a></li>
+<li><a href="#">~beano</a></li>
+<li><a href="#">~beard</a></li>
+<li><a href="#">~bedew</a></li>
+<li><a href="#">~bedip</a></li>
+<li><a href="#">~bedot</a></li>
+<li><a href="#">~befog</a></li>
+<li><a href="#">~beige</a></li>
+<li><a href="#">~bejan</a></li>
+<li><a href="#">~beld </a></li>
+<li><a href="#">~belly</a></li>
+<li><a href="#">~bemar</a></li>
+<li><a href="#">~bemix</a></li>
+<li><a href="#">~benda</a></li>
+<li><a href="#">~beni </a></li>
+<li><a href="#">~besra</a></li>
+<li><a href="#">~betel</a></li>
+<li><a href="#">~biabo</a></li>
+<li><a href="#">~bibb </a></li>
+<li><a href="#">~bike </a></li>
+<li><a href="#">~billy</a></li>
+<li><a href="#">~bind </a></li>
+<li><a href="#">~biota</a></li>
+<li><a href="#">~biri </a></li>
+<li><a href="#">~blank</a></li>
+<li><a href="#">~blay </a></li>
+<li><a href="#">~bleak</a></li>
+<li><a href="#">~bled </a></li>
+<li><a href="#">~blest</a></li>
+<li><a href="#">~blizz</a></li>
+<li><a href="#">~bloat</a></li>
+<li><a href="#">~blob </a></li>
+<li><a href="#">~blues</a></li>
+<li><a href="#">~board</a></li>
+<li><a href="#">~bogey</a></li>
+<li><a href="#">~bogy </a></li>
+<li><a href="#">~bohor</a></li>
+<li><a href="#">~boily</a></li>
+<li><a href="#">~boned</a></li>
+<li><a href="#">~borer</a></li>
+<li><a href="#">~bosh </a></li>
+<li><a href="#">~boxen</a></li>
+<li><a href="#">~braca</a></li>
+<li><a href="#">~braky</a></li>
+<li><a href="#">~briar</a></li>
+<li><a href="#">~brog </a></li>
+<li><a href="#">~broke</a></li>
+<li><a href="#">~brool</a></li>
+<li><a href="#">~broth</a></li>
+<li><a href="#">~bubby</a></li>
+<li><a href="#">~built</a></li>
+<li><a href="#">~bunch</a></li>
+<li><a href="#">~burgh</a></li>
+<li><a href="#">~burka</a></li>
+<li><a href="#">~burke</a></li>
+<li><a href="#">~busby</a></li>
+<li><a href="#">~busky</a></li>
+<li><a href="#">~bust </a></li>
+<li><a href="#">~buyer</a></li>
+<li><a href="#">~cabal</a></li>
+<li><a href="#">~cabio</a></li>
+<li><a href="#">~cabob</a></li>
+<li><a href="#">~cabot</a></li>
+<li><a href="#">~caddy</a></li>
+<li><a href="#">~caeca</a></li>
+<li><a href="#">~cahow</a></li>
+<li><a href="#">~calor</a></li>
+<li><a href="#">~cameo</a></li>
+<li><a href="#">~caner</a></li>
+<li><a href="#">~canny</a></li>
+<li><a href="#">~caph </a></li>
+<li><a href="#">~capsa</a></li>
+<li><a href="#">~carga</a></li>
+<li><a href="#">~cark </a></li>
+<li><a href="#">~carol</a></li>
+<li><a href="#">~carve</a></li>
+<li><a href="#">~caser</a></li>
+<li><a href="#">~casse</a></li>
+<li><a href="#">~catch</a></li>
+<li><a href="#">~cauch</a></li>
+<li><a href="#">~cauma</a></li>
+<li><a href="#">~cepe </a></li>
+<li><a href="#">~ceras</a></li>
+<li><a href="#">~chab </a></li>
+<li><a href="#">~chaja</a></li>
+<li><a href="#">~champ</a></li>
+<li><a href="#">~chaos</a></li>
+<li><a href="#">~chati</a></li>
+<li><a href="#">~chaya</a></li>
+<li><a href="#">~check</a></li>
+<li><a href="#">~cheek</a></li>
+<li><a href="#">~cheki</a></li>
+<li><a href="#">~chino</a></li>
+<li><a href="#">~chore</a></li>
+<li><a href="#">~chyme</a></li>
+<li><a href="#">~cigua</a></li>
+<li><a href="#">~cisco</a></li>
+<li><a href="#">~cista</a></li>
+<li><a href="#">~clava</a></li>
+<li><a href="#">~clavy</a></li>
+<li><a href="#">~clead</a></li>
+<li><a href="#">~cleck</a></li>
+<li><a href="#">~cleg </a></li>
+<li><a href="#">~clipt</a></li>
+<li><a href="#">~clive</a></li>
+<li><a href="#">~clour</a></li>
+<li><a href="#">~coaxy</a></li>
+<li><a href="#">~cocci</a></li>
+<li><a href="#">~cocoa</a></li>
+<li><a href="#">~cogon</a></li>
+<li><a href="#">~cogue</a></li>
+<li><a href="#">~coiny</a></li>
+<li><a href="#">~colic</a></li>
+<li><a href="#">~colin</a></li>
+<li><a href="#">~cond </a></li>
+<li><a href="#">~coned</a></li>
+<li><a href="#">~conn </a></li>
+<li><a href="#">~conte</a></li>
+<li><a href="#">~cooer</a></li>
+<li><a href="#">~coof </a></li>
+<li><a href="#">~coram</a></li>
+<li><a href="#">~cordy</a></li>
+<li><a href="#">~corol</a></li>
+<li><a href="#">~corta</a></li>
+<li><a href="#">~coset</a></li>
+<li><a href="#">~cosh </a></li>
+<li><a href="#">~cothe</a></li>
+<li><a href="#">~cowy </a></li>
+<li><a href="#">~cozen</a></li>
+<li><a href="#">~crack</a></li>
+<li><a href="#">~cream</a></li>
+<li><a href="#">~crena</a></li>
+<li><a href="#">~crest</a></li>
+<li><a href="#">~cribo</a></li>
+<li><a href="#">~crick</a></li>
+<li><a href="#">~crier</a></li>
+<li><a href="#">~crig </a></li>
+<li><a href="#">~crout</a></li>
+<li><a href="#">~crunt</a></li>
+<li><a href="#">~crush</a></li>
+<li><a href="#">~crust</a></li>
+<li><a href="#">~cubic</a></li>
+<li><a href="#">~culla</a></li>
+<li><a href="#">~culmy</a></li>
+<li><a href="#">~cult </a></li>
+<li><a href="#">~cumyl</a></li>
+<li><a href="#">~cushy</a></li>
+<li><a href="#">~cutis</a></li>
+<li><a href="#">~cyath</a></li>
+<li><a href="#">~cycad</a></li>
+<li><a href="#">~cyke </a></li>
+<li><a href="#">~cymba</a></li>
+<li><a href="#">~cyme </a></li>
+<li><a href="#">~cypre</a></li>
+<li><a href="#">~dadap</a></li>
+<li><a href="#">~daer </a></li>
+<li><a href="#">~daisy</a></li>
+<li><a href="#">~daiva</a></li>
+<li><a href="#">~dalle</a></li>
+<li><a href="#">~dandy</a></li>
+<li><a href="#">~darby</a></li>
+<li><a href="#">~daroo</a></li>
+<li><a href="#">~darst</a></li>
+<li><a href="#">~dauby</a></li>
+<li><a href="#">~daud </a></li>
+<li><a href="#">~dauw </a></li>
+<li><a href="#">~dealt</a></li>
+<li><a href="#">~debar</a></li>
+<li><a href="#">~debit</a></li>
+<li><a href="#">~deity</a></li>
+<li><a href="#">~demal</a></li>
+<li><a href="#">~depot</a></li>
+<li><a href="#">~depth</a></li>
+<li><a href="#">~deric</a></li>
+<li><a href="#">~desi </a></li>
+<li><a href="#">~desyl</a></li>
+<li><a href="#">~devil</a></li>
+<li><a href="#">~dhava</a></li>
+<li><a href="#">~dial </a></li>
+<li><a href="#">~diary</a></li>
+<li><a href="#">~diem </a></li>
+<li><a href="#">~dier </a></li>
+<li><a href="#">~dildo</a></li>
+<li><a href="#">~dimly</a></li>
+<li><a href="#">~diner</a></li>
+<li><a href="#">~diode</a></li>
+<li><a href="#">~diter</a></li>
+<li><a href="#">~dock </a></li>
+<li><a href="#">~doggo</a></li>
+<li><a href="#">~domal</a></li>
+<li><a href="#">~dotal</a></li>
+<li><a href="#">~doum </a></li>
+<li><a href="#">~dover</a></li>
+<li><a href="#">~dowel</a></li>
+<li><a href="#">~dowf </a></li>
+<li><a href="#">~drab </a></li>
+<li><a href="#">~drate</a></li>
+<li><a href="#">~drias</a></li>
+<li><a href="#">~drib </a></li>
+<li><a href="#">~drift</a></li>
+<li><a href="#">~drupe</a></li>
+<li><a href="#">~duali</a></li>
+<li><a href="#">~duchy</a></li>
+<li><a href="#">~duer </a></li>
+<li><a href="#">~duet </a></li>
+<li><a href="#">~duper</a></li>
+<li><a href="#">~duro </a></li>
+<li><a href="#">~dutch</a></li>
+<li><a href="#">~duty </a></li>
+<li><a href="#">~dwelt</a></li>
+<li><a href="#">~dyne </a></li>
+<li><a href="#">~eats </a></li>
+<li><a href="#">~ecru </a></li>
+<li><a href="#">~eking</a></li>
+<li><a href="#">~elide</a></li>
+<li><a href="#">~elod </a></li>
+<li><a href="#">~emcee</a></li>
+<li><a href="#">~emery</a></li>
+<li><a href="#">~emote</a></li>
+<li><a href="#">~emyd </a></li>
+<li><a href="#">~ender</a></li>
+<li><a href="#">~enorm</a></li>
+<li><a href="#">~eosin</a></li>
+<li><a href="#">~equip</a></li>
+<li><a href="#">~erose</a></li>
+<li><a href="#">~erupt</a></li>
+<li><a href="#">~ethal</a></li>
+<li><a href="#">~etna </a></li>
+<li><a href="#">~etym </a></li>
+<li><a href="#">~evens</a></li>
+<li><a href="#">~evict</a></li>
+<li><a href="#">~ewder</a></li>
+<li><a href="#">~exeat</a></li>
+<li><a href="#">~fabes</a></li>
+<li><a href="#">~facer</a></li>
+<li><a href="#">~facet</a></li>
+<li><a href="#">~faint</a></li>
+<li><a href="#">~fairy</a></li>
+<li><a href="#">~falx </a></li>
+<li><a href="#">~fant </a></li>
+<li><a href="#">~farcy</a></li>
+<li><a href="#">~farde</a></li>
+<li><a href="#">~favn </a></li>
+<li><a href="#">~fenks</a></li>
+<li><a href="#">~fenny</a></li>
+<li><a href="#">~fetch</a></li>
+<li><a href="#">~fetus</a></li>
+<li><a href="#">~feued</a></li>
+<li><a href="#">~fezzy</a></li>
+<li><a href="#">~fifer</a></li>
+<li><a href="#">~fifie</a></li>
+<li><a href="#">~filmy</a></li>
+<li><a href="#">~finis</a></li>
+<li><a href="#">~fink </a></li>
+<li><a href="#">~flack</a></li>
+<li><a href="#">~flamb</a></li>
+<li><a href="#">~flash</a></li>
+<li><a href="#">~flimp</a></li>
+<li><a href="#">~flite</a></li>
+<li><a href="#">~flump</a></li>
+<li><a href="#">~flurr</a></li>
+<li><a href="#">~flute</a></li>
+<li><a href="#">~flyer</a></li>
+<li><a href="#">~fonly</a></li>
+<li><a href="#">~fons </a></li>
+<li><a href="#">~foppy</a></li>
+<li><a href="#">~forel</a></li>
+<li><a href="#">~formy</a></li>
+<li><a href="#">~forty</a></li>
+<li><a href="#">~forum</a></li>
+<li><a href="#">~fosie</a></li>
+<li><a href="#">~fount</a></li>
+<li><a href="#">~fowk </a></li>
+<li><a href="#">~fox  </a></li>
+<li><a href="#">~frab </a></li>
+<li><a href="#">~fraid</a></li>
+<li><a href="#">~frail</a></li>
+<li><a href="#">~fream</a></li>
+<li><a href="#">~freed</a></li>
+<li><a href="#">~freet</a></li>
+<li><a href="#">~frond</a></li>
+<li><a href="#">~frore</a></li>
+<li><a href="#">~fruit</a></li>
+<li><a href="#">~fubsy</a></li>
+<li><a href="#">~fumet</a></li>
+<li><a href="#">~furil</a></li>
+<li><a href="#">~furor</a></li>
+<li><a href="#">~furry</a></li>
+<li><a href="#">~gair </a></li>
+<li><a href="#">~gaize</a></li>
+<li><a href="#">~gamma</a></li>
+<li><a href="#">~gamp </a></li>
+<li><a href="#">~gaol </a></li>
+<li><a href="#">~gapa </a></li>
+<li><a href="#">~gaumy</a></li>
+<li><a href="#">~gauzy</a></li>
+<li><a href="#">~gazee</a></li>
+<li><a href="#">~geest</a></li>
+<li><a href="#">~genic</a></li>
+<li><a href="#">~genin</a></li>
+<li><a href="#">~genom</a></li>
+<li><a href="#">~gerip</a></li>
+<li><a href="#">~geum </a></li>
+<li><a href="#">~giant</a></li>
+<li><a href="#">~gied </a></li>
+<li><a href="#">~gigot</a></li>
+<li><a href="#">~gimel</a></li>
+<li><a href="#">~girsh</a></li>
+<li><a href="#">~gisla</a></li>
+<li><a href="#">~glop </a></li>
+<li><a href="#">~gloy </a></li>
+<li><a href="#">~glut </a></li>
+<li><a href="#">~goave</a></li>
+<li><a href="#">~gobbe</a></li>
+<li><a href="#">~gonad</a></li>
+<li><a href="#">~gorer</a></li>
+<li><a href="#">~gove </a></li>
+<li><a href="#">~gowf </a></li>
+<li><a href="#">~gowl </a></li>
+<li><a href="#">~grasp</a></li>
+<li><a href="#">~graze</a></li>
+<li><a href="#">~grice</a></li>
+<li><a href="#">~grief</a></li>
+<li><a href="#">~gripe</a></li>
+<li><a href="#">~grith</a></li>
+<li><a href="#">~grout</a></li>
+<li><a href="#">~grunt</a></li>
+<li><a href="#">~guard</a></li>
+<li><a href="#">~gudok</a></li>
+<li><a href="#">~guild</a></li>
+<li><a href="#">~gulae</a></li>
+<li><a href="#">~gulfy</a></li>
+<li><a href="#">~guna </a></li>
+<li><a href="#">~gurge</a></li>
+<li><a href="#">~gwely</a></li>
+<li><a href="#">~haaf </a></li>
+<li><a href="#">~hange</a></li>
+<li><a href="#">~hanse</a></li>
+<li><a href="#">~haori</a></li>
+<li><a href="#">~hapu </a></li>
+<li><a href="#">~harbi</a></li>
+<li><a href="#">~haugh</a></li>
+<li><a href="#">~hawse</a></li>
+<li><a href="#">~hazen</a></li>
+<li><a href="#">~hazer</a></li>
+<li><a href="#">~heart</a></li>
+<li><a href="#">~heugh</a></li>
+<li><a href="#">~hexer</a></li>
+<li><a href="#">~hight</a></li>
+<li><a href="#">~hilsa</a></li>
+<li><a href="#">~hinge</a></li>
+<li><a href="#">~hippy</a></li>
+<li><a href="#">~hired</a></li>
+<li><a href="#">~hirse</a></li>
+<li><a href="#">~hiver</a></li>
+<li><a href="#">~hives</a></li>
+<li><a href="#">~hoary</a></li>
+<li><a href="#">~honey</a></li>
+<li><a href="#">~hoper</a></li>
+<li><a href="#">~hoppy</a></li>
+<li><a href="#">~hound</a></li>
+<li><a href="#">~houri</a></li>
+<li><a href="#">~howdy</a></li>
+<li><a href="#">~hubby</a></li>
+<li><a href="#">~hued </a></li>
+<li><a href="#">~huer </a></li>
+<li><a href="#">~huke </a></li>
+<li><a href="#">~hulky</a></li>
+<li><a href="#">~humus</a></li>
+<li><a href="#">~hunch</a></li>
+<li><a href="#">~hundi</a></li>
+<li><a href="#">~hurry</a></li>
+<li><a href="#">~hydro</a></li>
+<li><a href="#">~hyena</a></li>
+<li><a href="#">~hynde</a></li>
+<li><a href="#">~hyoid</a></li>
+<li><a href="#">~hyper</a></li>
+<li><a href="#">~iambi</a></li>
+<li><a href="#">~icing</a></li>
+<li><a href="#">~idiot</a></li>
+<li><a href="#">~ikona</a></li>
+<li><a href="#">~ikra </a></li>
+<li><a href="#">~ilima</a></li>
+<li><a href="#">~imbed</a></li>
+<li><a href="#">~immix</a></li>
+<li><a href="#">~impel</a></li>
+<li><a href="#">~inaja</a></li>
+<li><a href="#">~inby </a></li>
+<li><a href="#">~ingle</a></li>
+<li><a href="#">~innet</a></li>
+<li><a href="#">~inrun</a></li>
+<li><a href="#">~insea</a></li>
+<li><a href="#">~inurn</a></li>
+<li><a href="#">~istle</a></li>
+<li><a href="#">~itcze</a></li>
+<li><a href="#">~jager</a></li>
+<li><a href="#">~jako </a></li>
+<li><a href="#">~jaman</a></li>
+<li><a href="#">~jane </a></li>
+<li><a href="#">~jann </a></li>
+<li><a href="#">~jass </a></li>
+<li><a href="#">~jawy </a></li>
+<li><a href="#">~jazzy</a></li>
+<li><a href="#">~jeery</a></li>
+<li><a href="#">~jemmy</a></li>
+<li><a href="#">~jenny</a></li>
+<li><a href="#">~jerky</a></li>
+<li><a href="#">~jess </a></li>
+<li><a href="#">~jest </a></li>
+<li><a href="#">~jilt </a></li>
+<li><a href="#">~jobo </a></li>
+<li><a href="#">~joey </a></li>
+<li><a href="#">~joist</a></li>
+<li><a href="#">~jough</a></li>
+<li><a href="#">~jowar</a></li>
+<li><a href="#">~june </a></li>
+<li><a href="#">~jutty</a></li>
+<li><a href="#">~kabel</a></li>
+<li><a href="#">~kados</a></li>
+<li><a href="#">~kali </a></li>
+<li><a href="#">~kalon</a></li>
+<li><a href="#">~kanae</a></li>
+<li><a href="#">~kaput</a></li>
+<li><a href="#">~karma</a></li>
+<li><a href="#">~karou</a></li>
+<li><a href="#">~katun</a></li>
+<li><a href="#">~kayo </a></li>
+<li><a href="#">~kelep</a></li>
+<li><a href="#">~kempt</a></li>
+<li><a href="#">~keno </a></li>
+<li><a href="#">~kevel</a></li>
+<li><a href="#">~keyed</a></li>
+<li><a href="#">~khair</a></li>
+<li><a href="#">~kick </a></li>
+<li><a href="#">~kike </a></li>
+<li><a href="#">~kiku </a></li>
+<li><a href="#">~kilah</a></li>
+<li><a href="#">~kilo </a></li>
+<li><a href="#">~kiri </a></li>
+<li><a href="#">~kirk </a></li>
+<li><a href="#">~klosh</a></li>
+<li><a href="#">~knab </a></li>
+<li><a href="#">~knave</a></li>
+<li><a href="#">~knit </a></li>
+<li><a href="#">~knurl</a></li>
+<li><a href="#">~kobu </a></li>
+<li><a href="#">~koff </a></li>
+<li><a href="#">~kolea</a></li>
+<li><a href="#">~krait</a></li>
+<li><a href="#">~kral </a></li>
+<li><a href="#">~kran </a></li>
+<li><a href="#">~krone</a></li>
+<li><a href="#">~kuba </a></li>
+<li><a href="#">~kudu </a></li>
+<li><a href="#">~kudzu</a></li>
+<li><a href="#">~kuei </a></li>
+<li><a href="#">~kusha</a></li>
+<li><a href="#">~kyar </a></li>
+<li><a href="#">~labis</a></li>
+<li><a href="#">~laced</a></li>
+<li><a href="#">~laden</a></li>
+<li><a href="#">~ladle</a></li>
+<li><a href="#">~lagan</a></li>
+<li><a href="#">~laker</a></li>
+<li><a href="#">~lakie</a></li>
+<li><a href="#">~lamby</a></li>
+<li><a href="#">~lance</a></li>
+<li><a href="#">~larva</a></li>
+<li><a href="#">~lech </a></li>
+<li><a href="#">~lehua</a></li>
+<li><a href="#">~lenis</a></li>
+<li><a href="#">~lessn</a></li>
+<li><a href="#">~letup</a></li>
+<li><a href="#">~leud </a></li>
+<li><a href="#">~liard</a></li>
+<li><a href="#">~lied </a></li>
+<li><a href="#">~lief </a></li>
+<li><a href="#">~liken</a></li>
+<li><a href="#">~limen</a></li>
+<li><a href="#">~limes</a></li>
+<li><a href="#">~linga</a></li>
+<li><a href="#">~links</a></li>
+<li><a href="#">~linty</a></li>
+<li><a href="#">~litas</a></li>
+<li><a href="#">~lithe</a></li>
+<li><a href="#">~load </a></li>
+<li><a href="#">~lobal</a></li>
+<li><a href="#">~lobby</a></li>
+<li><a href="#">~loci </a></li>
+<li><a href="#">~logos</a></li>
+<li><a href="#">~lolly</a></li>
+<li><a href="#">~lowan</a></li>
+<li><a href="#">~lummy</a></li>
+<li><a href="#">~lurer</a></li>
+<li><a href="#">~lyse </a></li>
+<li><a href="#">~maco </a></li>
+<li><a href="#">~magas</a></li>
+<li><a href="#">~mail </a></li>
+<li><a href="#">~makuk</a></li>
+<li><a href="#">~malar</a></li>
+<li><a href="#">~manoc</a></li>
+<li><a href="#">~many </a></li>
+<li><a href="#">~mapau</a></li>
+<li><a href="#">~massa</a></li>
+<li><a href="#">~matax</a></li>
+<li><a href="#">~mater</a></li>
+<li><a href="#">~matin</a></li>
+<li><a href="#">~maugh</a></li>
+<li><a href="#">~maund</a></li>
+<li><a href="#">~mawp </a></li>
+<li><a href="#">~mayor</a></li>
+<li><a href="#">~mead </a></li>
+<li><a href="#">~meak </a></li>
+<li><a href="#">~mealy</a></li>
+<li><a href="#">~meant</a></li>
+<li><a href="#">~medal</a></li>
+<li><a href="#">~melam</a></li>
+<li><a href="#">~meloe</a></li>
+<li><a href="#">~mewer</a></li>
+<li><a href="#">~micht</a></li>
+<li><a href="#">~mick </a></li>
+<li><a href="#">~midst</a></li>
+<li><a href="#">~mijl </a></li>
+<li><a href="#">~mimeo</a></li>
+<li><a href="#">~mimly</a></li>
+<li><a href="#">~mingy</a></li>
+<li><a href="#">~minot</a></li>
+<li><a href="#">~miny </a></li>
+<li><a href="#">~miry </a></li>
+<li><a href="#">~miser</a></li>
+<li><a href="#">~misty</a></li>
+<li><a href="#">~mojo </a></li>
+<li><a href="#">~moki </a></li>
+<li><a href="#">~moko </a></li>
+<li><a href="#">~molka</a></li>
+<li><a href="#">~molpe</a></li>
+<li><a href="#">~monad</a></li>
+<li><a href="#">~moray</a></li>
+<li><a href="#">~mores</a></li>
+<li><a href="#">~morse</a></li>
+<li><a href="#">~mouly</a></li>
+<li><a href="#">~mpret</a></li>
+<li><a href="#">~mucic</a></li>
+<li><a href="#">~mucor</a></li>
+<li><a href="#">~muley</a></li>
+<li><a href="#">~munga</a></li>
+<li><a href="#">~munge</a></li>
+<li><a href="#">~murid</a></li>
+<li><a href="#">~musar</a></li>
+<li><a href="#">~muser</a></li>
+<li><a href="#">~mute </a></li>
+<li><a href="#">~nacry</a></li>
+<li><a href="#">~naggy</a></li>
+<li><a href="#">~naid </a></li>
+<li><a href="#">~nandi</a></li>
+<li><a href="#">~nanes</a></li>
+<li><a href="#">~nappe</a></li>
+<li><a href="#">~narky</a></li>
+<li><a href="#">~navar</a></li>
+<li><a href="#">~neffy</a></li>
+<li><a href="#">~negus</a></li>
+<li><a href="#">~neti </a></li>
+<li><a href="#">~niche</a></li>
+<li><a href="#">~niter</a></li>
+<li><a href="#">~nixie</a></li>
+<li><a href="#">~noded</a></li>
+<li><a href="#">~noise</a></li>
+<li><a href="#">~nokta</a></li>
+<li><a href="#">~nonce</a></li>
+<li><a href="#">~nonya</a></li>
+<li><a href="#">~nous </a></li>
+<li><a href="#">~novem</a></li>
+<li><a href="#">~nudge</a></li>
+<li><a href="#">~nuque</a></li>
+<li><a href="#">~nylon</a></li>
+<li><a href="#">~oasis</a></li>
+<li><a href="#">~obit </a></li>
+<li><a href="#">~octet</a></li>
+<li><a href="#">~octic</a></li>
+<li><a href="#">~ocuby</a></li>
+<li><a href="#">~odds </a></li>
+<li><a href="#">~oenin</a></li>
+<li><a href="#">~offer</a></li>
+<li><a href="#">~ofter</a></li>
+<li><a href="#">~ogive</a></li>
+<li><a href="#">~ogmic</a></li>
+<li><a href="#">~oiler</a></li>
+<li><a href="#">~olam </a></li>
+<li><a href="#">~ortho</a></li>
+<li><a href="#">~osier</a></li>
+<li><a href="#">~osmic</a></li>
+<li><a href="#">~ossal</a></li>
+<li><a href="#">~otary</a></li>
+<li><a href="#">~other</a></li>
+<li><a href="#">~outly</a></li>
+<li><a href="#">~ovist</a></li>
+<li><a href="#">~oxide</a></li>
+<li><a href="#">~pacer</a></li>
+<li><a href="#">~pagus</a></li>
+<li><a href="#">~palay</a></li>
+<li><a href="#">~paled</a></li>
+<li><a href="#">~palpi</a></li>
+<li><a href="#">~parel</a></li>
+<li><a href="#">~parry</a></li>
+<li><a href="#">~pashm</a></li>
+<li><a href="#">~paver</a></li>
+<li><a href="#">~payor</a></li>
+<li><a href="#">~peavy</a></li>
+<li><a href="#">~pega </a></li>
+<li><a href="#">~pepo </a></li>
+<li><a href="#">~perit</a></li>
+<li><a href="#">~petre</a></li>
+<li><a href="#">~pfund</a></li>
+<li><a href="#">~phage</a></li>
+<li><a href="#">~pheal</a></li>
+<li><a href="#">~phoh </a></li>
+<li><a href="#">~phono</a></li>
+<li><a href="#">~picul</a></li>
+<li><a href="#">~piezo</a></li>
+<li><a href="#">~pilar</a></li>
+<li><a href="#">~pinky</a></li>
+<li><a href="#">~pinna</a></li>
+<li><a href="#">~pipet</a></li>
+<li><a href="#">~pist </a></li>
+<li><a href="#">~pitau</a></li>
+<li><a href="#">~piuri</a></li>
+<li><a href="#">~plait</a></li>
+<li><a href="#">~pleny</a></li>
+<li><a href="#">~plica</a></li>
+<li><a href="#">~pluma</a></li>
+<li><a href="#">~plump</a></li>
+<li><a href="#">~plunk</a></li>
+<li><a href="#">~poach</a></li>
+<li><a href="#">~poet </a></li>
+<li><a href="#">~poler</a></li>
+<li><a href="#">~polis</a></li>
+<li><a href="#">~polyp</a></li>
+<li><a href="#">~pooch</a></li>
+<li><a href="#">~potto</a></li>
+<li><a href="#">~poxy </a></li>
+<li><a href="#">~prau </a></li>
+<li><a href="#">~press</a></li>
+<li><a href="#">~prick</a></li>
+<li><a href="#">~prime</a></li>
+<li><a href="#">~proal</a></li>
+<li><a href="#">~psoas</a></li>
+<li><a href="#">~pucka</a></li>
+<li><a href="#">~puddy</a></li>
+<li><a href="#">~pudgy</a></li>
+<li><a href="#">~pudic</a></li>
+<li><a href="#">~puggy</a></li>
+<li><a href="#">~pugh </a></li>
+<li><a href="#">~puker</a></li>
+<li><a href="#">~puli </a></li>
+<li><a href="#">~puma </a></li>
+<li><a href="#">~punty</a></li>
+<li><a href="#">~puppy</a></li>
+<li><a href="#">~pursy</a></li>
+<li><a href="#">~pygmy</a></li>
+<li><a href="#">~qere </a></li>
+<li><a href="#">~quave</a></li>
+<li><a href="#">~quawk</a></li>
+<li><a href="#">~queak</a></li>
+<li><a href="#">~quiff</a></li>
+<li><a href="#">~quina</a></li>
+<li><a href="#">~quop </a></li>
+<li><a href="#">~radio</a></li>
+<li><a href="#">~raffe</a></li>
+<li><a href="#">~rager</a></li>
+<li><a href="#">~rajah</a></li>
+<li><a href="#">~ramed</a></li>
+<li><a href="#">~ranal</a></li>
+<li><a href="#">~ratal</a></li>
+<li><a href="#">~rauli</a></li>
+<li><a href="#">~raupo</a></li>
+<li><a href="#">~ravin</a></li>
+<li><a href="#">~razz </a></li>
+<li><a href="#">~reap </a></li>
+<li><a href="#">~rebar</a></li>
+<li><a href="#">~rebed</a></li>
+<li><a href="#">~rebud</a></li>
+<li><a href="#">~redue</a></li>
+<li><a href="#">~redux</a></li>
+<li><a href="#">~reedy</a></li>
+<li><a href="#">~refit</a></li>
+<li><a href="#">~reges</a></li>
+<li><a href="#">~regur</a></li>
+<li><a href="#">~relay</a></li>
+<li><a href="#">~relet</a></li>
+<li><a href="#">~repew</a></li>
+<li><a href="#">~rerow</a></li>
+<li><a href="#">~ridge</a></li>
+<li><a href="#">~ringy</a></li>
+<li><a href="#">~rinse</a></li>
+<li><a href="#">~ritzy</a></li>
+<li><a href="#">~roam </a></li>
+<li><a href="#">~roer </a></li>
+<li><a href="#">~rokey</a></li>
+<li><a href="#">~roleo</a></li>
+<li><a href="#">~rompy</a></li>
+<li><a href="#">~ronco</a></li>
+<li><a href="#">~roral</a></li>
+<li><a href="#">~rosed</a></li>
+<li><a href="#">~roupy</a></li>
+<li><a href="#">~routh</a></li>
+<li><a href="#">~rowel</a></li>
+<li><a href="#">~rowet</a></li>
+<li><a href="#">~ruby </a></li>
+<li><a href="#">~ruga </a></li>
+<li><a href="#">~rummy</a></li>
+<li><a href="#">~rupia</a></li>
+<li><a href="#">~rural</a></li>
+<li><a href="#">~rusky</a></li>
+<li><a href="#">~ruvid</a></li>
+<li><a href="#">~rynt </a></li>
+<li><a href="#">~sago </a></li>
+<li><a href="#">~sally</a></li>
+<li><a href="#">~salta</a></li>
+<li><a href="#">~salty</a></li>
+<li><a href="#">~saman</a></li>
+<li><a href="#">~sambo</a></li>
+<li><a href="#">~sanai</a></li>
+<li><a href="#">~sanga</a></li>
+<li><a href="#">~sarif</a></li>
+<li><a href="#">~sart </a></li>
+<li><a href="#">~sasan</a></li>
+<li><a href="#">~satyr</a></li>
+<li><a href="#">~saugh</a></li>
+<li><a href="#">~saury</a></li>
+<li><a href="#">~saute</a></li>
+<li><a href="#">~sazen</a></li>
+<li><a href="#">~scarn</a></li>
+<li><a href="#">~scary</a></li>
+<li><a href="#">~scase</a></li>
+<li><a href="#">~scend</a></li>
+<li><a href="#">~scoop</a></li>
+<li><a href="#">~scran</a></li>
+<li><a href="#">~scrin</a></li>
+<li><a href="#">~scudo</a></li>
+<li><a href="#">~secos</a></li>
+<li><a href="#">~sect </a></li>
+<li><a href="#">~sedge</a></li>
+<li><a href="#">~segol</a></li>
+<li><a href="#">~sele </a></li>
+<li><a href="#">~self </a></li>
+<li><a href="#">~selly</a></li>
+<li><a href="#">~send </a></li>
+<li><a href="#">~seps </a></li>
+<li><a href="#">~sereh</a></li>
+<li><a href="#">~sesti</a></li>
+<li><a href="#">~seugh</a></li>
+<li><a href="#">~sewan</a></li>
+<li><a href="#">~shaps</a></li>
+<li><a href="#">~shard</a></li>
+<li><a href="#">~shear</a></li>
+<li><a href="#">~sheat</a></li>
+<li><a href="#">~shewa</a></li>
+<li><a href="#">~shire</a></li>
+<li><a href="#">~shita</a></li>
+<li><a href="#">~shoop</a></li>
+<li><a href="#">~shore</a></li>
+<li><a href="#">~shorn</a></li>
+<li><a href="#">~shott</a></li>
+<li><a href="#">~shoya</a></li>
+<li><a href="#">~shrag</a></li>
+<li><a href="#">~shram</a></li>
+<li><a href="#">~shuba</a></li>
+<li><a href="#">~shunt</a></li>
+<li><a href="#">~sight</a></li>
+<li><a href="#">~sigma</a></li>
+<li><a href="#">~sikar</a></li>
+<li><a href="#">~sion </a></li>
+<li><a href="#">~sirih</a></li>
+<li><a href="#">~sisel</a></li>
+<li><a href="#">~sitao</a></li>
+<li><a href="#">~sitio</a></li>
+<li><a href="#">~sixte</a></li>
+<li><a href="#">~sizal</a></li>
+<li><a href="#">~sizes</a></li>
+<li><a href="#">~skeen</a></li>
+<li><a href="#">~skeer</a></li>
+<li><a href="#">~skein</a></li>
+<li><a href="#">~skoo </a></li>
+<li><a href="#">~skua </a></li>
+<li><a href="#">~slaum</a></li>
+<li><a href="#">~slew </a></li>
+<li><a href="#">~slick</a></li>
+<li><a href="#">~sloan</a></li>
+<li><a href="#">~sloop</a></li>
+<li><a href="#">~slung</a></li>
+<li><a href="#">~smack</a></li>
+<li><a href="#">~smalm</a></li>
+<li><a href="#">~smart</a></li>
+<li><a href="#">~smelt</a></li>
+<li><a href="#">~smolt</a></li>
+<li><a href="#">~smoot</a></li>
+<li><a href="#">~smore</a></li>
+<li><a href="#">~smous</a></li>
+<li><a href="#">~smurr</a></li>
+<li><a href="#">~snaff</a></li>
+<li><a href="#">~snaky</a></li>
+<li><a href="#">~sneap</a></li>
+<li><a href="#">~snib </a></li>
+<li><a href="#">~snirl</a></li>
+<li><a href="#">~snod </a></li>
+<li><a href="#">~snot </a></li>
+<li><a href="#">~snowl</a></li>
+<li><a href="#">~snuff</a></li>
+<li><a href="#">~snurp</a></li>
+<li><a href="#">~soddy</a></li>
+<li><a href="#">~some </a></li>
+<li><a href="#">~sooty</a></li>
+<li><a href="#">~sowar</a></li>
+<li><a href="#">~sowel</a></li>
+<li><a href="#">~spaer</a></li>
+<li><a href="#">~spane</a></li>
+<li><a href="#">~spart</a></li>
+<li><a href="#">~spary</a></li>
+<li><a href="#">~spear</a></li>
+<li><a href="#">~sped </a></li>
+<li><a href="#">~speel</a></li>
+<li><a href="#">~spet </a></li>
+<li><a href="#">~spilt</a></li>
+<li><a href="#">~spiny</a></li>
+<li><a href="#">~spirt</a></li>
+<li><a href="#">~spise</a></li>
+<li><a href="#">~spite</a></li>
+<li><a href="#">~splat</a></li>
+<li><a href="#">~splet</a></li>
+<li><a href="#">~sprit</a></li>
+<li><a href="#">~spud </a></li>
+<li><a href="#">~staab</a></li>
+<li><a href="#">~staun</a></li>
+<li><a href="#">~steal</a></li>
+<li><a href="#">~stell</a></li>
+<li><a href="#">~stern</a></li>
+<li><a href="#">~stet </a></li>
+<li><a href="#">~stick</a></li>
+<li><a href="#">~stife</a></li>
+<li><a href="#">~stivy</a></li>
+<li><a href="#">~stoep</a></li>
+<li><a href="#">~stoot</a></li>
+<li><a href="#">~stove</a></li>
+<li><a href="#">~strag</a></li>
+<li><a href="#">~stret</a></li>
+<li><a href="#">~stria</a></li>
+<li><a href="#">~struv</a></li>
+<li><a href="#">~stuck</a></li>
+<li><a href="#">~study</a></li>
+<li><a href="#">~stug </a></li>
+<li><a href="#">~styan</a></li>
+<li><a href="#">~styca</a></li>
+<li><a href="#">~style</a></li>
+<li><a href="#">~suber</a></li>
+<li><a href="#">~such </a></li>
+<li><a href="#">~sunup</a></li>
+<li><a href="#">~surah</a></li>
+<li><a href="#">~surgy</a></li>
+<li><a href="#">~swash</a></li>
+<li><a href="#">~sweep</a></li>
+<li><a href="#">~swimy</a></li>
+<li><a href="#">~swipy</a></li>
+<li><a href="#">~swirl</a></li>
+<li><a href="#">~swom </a></li>
+<li><a href="#">~swot </a></li>
+<li><a href="#">~swum </a></li>
+<li><a href="#">~sylva</a></li>
+<li><a href="#">~syre </a></li>
+<li><a href="#">~taar </a></li>
+<li><a href="#">~tact </a></li>
+<li><a href="#">~taen </a></li>
+<li><a href="#">~tagua</a></li>
+<li><a href="#">~taiga</a></li>
+<li><a href="#">~tales</a></li>
+<li><a href="#">~taluk</a></li>
+<li><a href="#">~tamer</a></li>
+<li><a href="#">~tanzy</a></li>
+<li><a href="#">~tapen</a></li>
+<li><a href="#">~tapir</a></li>
+<li><a href="#">~taraf</a></li>
+<li><a href="#">~taroc</a></li>
+<li><a href="#">~tatty</a></li>
+<li><a href="#">~taupe</a></li>
+<li><a href="#">~taver</a></li>
+<li><a href="#">~tazia</a></li>
+<li><a href="#">~tchu </a></li>
+<li><a href="#">~teap </a></li>
+<li><a href="#">~teary</a></li>
+<li><a href="#">~tejon</a></li>
+<li><a href="#">~tempi</a></li>
+<li><a href="#">~tempo</a></li>
+<li><a href="#">~tenai</a></li>
+<li><a href="#">~tenon</a></li>
+<li><a href="#">~terek</a></li>
+<li><a href="#">~tereu</a></li>
+<li><a href="#">~tewel</a></li>
+<li><a href="#">~tewer</a></li>
+<li><a href="#">~text </a></li>
+<li><a href="#">~thack</a></li>
+<li><a href="#">~thana</a></li>
+<li><a href="#">~thave</a></li>
+<li><a href="#">~theca</a></li>
+<li><a href="#">~their</a></li>
+<li><a href="#">~thema</a></li>
+<li><a href="#">~thilk</a></li>
+<li><a href="#">~thisn</a></li>
+<li><a href="#">~thowt</a></li>
+<li><a href="#">~threw</a></li>
+<li><a href="#">~thrip</a></li>
+<li><a href="#">~throb</a></li>
+<li><a href="#">~throu</a></li>
+<li><a href="#">~thurm</a></li>
+<li><a href="#">~tibby</a></li>
+<li><a href="#">~tibet</a></li>
+<li><a href="#">~tibey</a></li>
+<li><a href="#">~ticca</a></li>
+<li><a href="#">~ticer</a></li>
+<li><a href="#">~ticul</a></li>
+<li><a href="#">~tier </a></li>
+<li><a href="#">~tilth</a></li>
+<li><a href="#">~timor</a></li>
+<li><a href="#">~tinta</a></li>
+<li><a href="#">~tithe</a></li>
+<li><a href="#">~tlaco</a></li>
+<li><a href="#">~toko </a></li>
+<li><a href="#">~tolyl</a></li>
+<li><a href="#">~toman</a></li>
+<li><a href="#">~tombe</a></li>
+<li><a href="#">~tommy</a></li>
+<li><a href="#">~tonga</a></li>
+<li><a href="#">~toque</a></li>
+<li><a href="#">~tored</a></li>
+<li><a href="#">~tosy </a></li>
+<li><a href="#">~toty </a></li>
+<li><a href="#">~towd </a></li>
+<li><a href="#">~toxa </a></li>
+<li><a href="#">~tozee</a></li>
+<li><a href="#">~tragi</a></li>
+<li><a href="#">~triad</a></li>
+<li><a href="#">~trine</a></li>
+<li><a href="#">~tripy</a></li>
+<li><a href="#">~troco</a></li>
+<li><a href="#">~trogs</a></li>
+<li><a href="#">~trope</a></li>
+<li><a href="#">~truce</a></li>
+<li><a href="#">~tryst</a></li>
+<li><a href="#">~tsia </a></li>
+<li><a href="#">~tugui</a></li>
+<li><a href="#">~tula </a></li>
+<li><a href="#">~tuner</a></li>
+<li><a href="#">~tunu </a></li>
+<li><a href="#">~tuny </a></li>
+<li><a href="#">~tuth </a></li>
+<li><a href="#">~tutti</a></li>
+<li><a href="#">~tutu </a></li>
+<li><a href="#">~twae </a></li>
+<li><a href="#">~tweil</a></li>
+<li><a href="#">~twirl</a></li>
+<li><a href="#">~udasi</a></li>
+<li><a href="#">~ulua </a></li>
+<li><a href="#">~unapt</a></li>
+<li><a href="#">~unark</a></li>
+<li><a href="#">~unbar</a></li>
+<li><a href="#">~unbid</a></li>
+<li><a href="#">~unden</a></li>
+<li><a href="#">~undim</a></li>
+<li><a href="#">~unfix</a></li>
+<li><a href="#">~unice</a></li>
+<li><a href="#">~unlie</a></li>
+<li><a href="#">~unman</a></li>
+<li><a href="#">~unmew</a></li>
+<li><a href="#">~unode</a></li>
+<li><a href="#">~unrid</a></li>
+<li><a href="#">~untin</a></li>
+<li><a href="#">~unuse</a></li>
+<li><a href="#">~unweb</a></li>
+<li><a href="#">~upas </a></li>
+<li><a href="#">~upfly</a></li>
+<li><a href="#">~upwax</a></li>
+<li><a href="#">~uredo</a></li>
+<li><a href="#">~usual</a></li>
+<li><a href="#">~utick</a></li>
+<li><a href="#">~utrum</a></li>
+<li><a href="#">~utsuk</a></li>
+<li><a href="#">~vague</a></li>
+<li><a href="#">~vapid</a></li>
+<li><a href="#">~vend </a></li>
+<li><a href="#">~venom</a></li>
+<li><a href="#">~verby</a></li>
+<li><a href="#">~verge</a></li>
+<li><a href="#">~verve</a></li>
+<li><a href="#">~vetch</a></li>
+<li><a href="#">~video</a></li>
+<li><a href="#">~vigia</a></li>
+<li><a href="#">~vila </a></li>
+<li><a href="#">~villa</a></li>
+<li><a href="#">~viner</a></li>
+<li><a href="#">~vower</a></li>
+<li><a href="#">~vuln </a></li>
+<li><a href="#">~wadi </a></li>
+<li><a href="#">~waer </a></li>
+<li><a href="#">~wagon</a></li>
+<li><a href="#">~wakan</a></li>
+<li><a href="#">~waker</a></li>
+<li><a href="#">~waky </a></li>
+<li><a href="#">~waled</a></li>
+<li><a href="#">~wanga</a></li>
+<li><a href="#">~waste</a></li>
+<li><a href="#">~waugh</a></li>
+<li><a href="#">~weald</a></li>
+<li><a href="#">~wean </a></li>
+<li><a href="#">~wede </a></li>
+<li><a href="#">~weigh</a></li>
+<li><a href="#">~whack</a></li>
+<li><a href="#">~whame</a></li>
+<li><a href="#">~whank</a></li>
+<li><a href="#">~wharp</a></li>
+<li><a href="#">~whase</a></li>
+<li><a href="#">~wheer</a></li>
+<li><a href="#">~whelm</a></li>
+<li><a href="#">~whine</a></li>
+<li><a href="#">~whirl</a></li>
+<li><a href="#">~whits</a></li>
+<li><a href="#">~whity</a></li>
+<li><a href="#">~whore</a></li>
+<li><a href="#">~widu </a></li>
+<li><a href="#">~windy</a></li>
+<li><a href="#">~wingy</a></li>
+<li><a href="#">~wirer</a></li>
+<li><a href="#">~withe</a></li>
+<li><a href="#">~witty</a></li>
+<li><a href="#">~wiver</a></li>
+<li><a href="#">~wode </a></li>
+<li><a href="#">~wodge</a></li>
+<li><a href="#">~woman</a></li>
+<li><a href="#">~woofy</a></li>
+<li><a href="#">~worth</a></li>
+<li><a href="#">~wouch</a></li>
+<li><a href="#">~wouf </a></li>
+<li><a href="#">~would</a></li>
+<li><a href="#">~woven</a></li>
+<li><a href="#">~wramp</a></li>
+<li><a href="#">~wreak</a></li>
+<li><a href="#">~wrive</a></li>
+<li><a href="#">~wunna</a></li>
+<li><a href="#">~wuzu </a></li>
+<li><a href="#">~xoana</a></li>
+<li><a href="#">~yacht</a></li>
+<li><a href="#">~yale </a></li>
+<li><a href="#">~yali </a></li>
+<li><a href="#">~yauld</a></li>
+<li><a href="#">~yaws </a></li>
+<li><a href="#">~yawy </a></li>
+<li><a href="#">~yodel</a></li>
+<li><a href="#">~yook </a></li>
+<li><a href="#">~youd </a></li>
+<li><a href="#">~zemni</a></li>
+<li><a href="#">~ziega</a></li>
+<li><a href="#">~zimme</a></li>
+<li><a href="#">~zizz </a></li>
+<li><a href="#">~zogo </a></li>
+<li><a href="#">~zoid </a></li>
+<li><a href="#">~zygal</a></li>
+			</ul>
+		</section>
+
+		<section id="snowflake">
+			<iframe src="/snowflake/snowflake.html" width="320" height="240" frameborder="0" scrolling="no"></iframe>
+		</section>
+		<section id="footer">
+			<div class="copy">
+				<p>Icons made by <a href="https://www.flaticon.com/authors/freepik"
+														rel="noreferrer"
+														title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/"
+																																rel="noreferrer"
+																																title="Flaticon">www.flaticon.com</a> is licensed by <a
+																																href="http://creativecommons.org/licenses/by/3.0/"
+																																rel="noreferrer"
+																																title="Creative Commons BY 3.0">CC 3.0 BY</a></p>
+				<p>Tilde Black system pages are licensed under a Creative Commons Attribution-ShareAlike 4.0 International License. Individual user pages are all rights reserved unless otherwise specified.</p>
+			</div>
+		</section>
+	</body>
+</html>
