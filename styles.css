@@ -35,7 +35,7 @@ hr{border-bottom: 1px solid var(--lines);}
 h1{font-size:28px;margin-bottom:1rem;color:var(--head1);}
 h1:not(:first-of-type){margin-top:2rem;}
 h2{font-size:24px;margin-top:2rem;margin-bottom:1rem;color:var(--head2);border-bottom: 1px solid var(--head2);}
-h3{font-weight:bold;font-variation-settings:"wght" 500;margin-top:2rem;margin-bottom:1rem;color:var(--head3);}
+h3{font-weight:bold;font-variation-settings:"wght" 700;margin-top:2rem;margin-bottom:1rem;color:var(--head3);}
 h4{font-style:italic;font-variation-settings:"ital" 1;font-synthesis:none;margin-top:2rem;margin-bottom:1rem;color:var(--head4);}
 h5{margin-top:2rem;margin-bottom:1rem;color:var(--head5);}
 strong{font-weight:700;font-variation-settings:"wght" 700;}
@@ -79,5 +79,5 @@ img{max-width:100%;height:auto;vertical-align:middle;font-style:italic;font-vari
 	}
 	a{color:var(--body);text-decoration:underline;text-decoration-color:var(--link);text-decoration-skip-ink:none;text-decoration-thickness:0.3rem;text-underline-offset:-0.25rem;transition:text-decoration 0.3s;}
 	a:hover{text-decoration-color:var(--linkhover);text-decoration-skip-ink:none;text-decoration-thickness:0.5rem;}
-	h1,h2,h3,h4,h5{font-weight:bold;font-variation-settings:"wght" 500;}
+	h1,h2,h3,h4,h5{font-weight:bold;font-variation-settings:"wght" 700;}
 }
