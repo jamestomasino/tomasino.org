@@ -13,10 +13,19 @@
 	--prebg: #262626;
 	--small: 0.6em;
 }
+@font-face {
+    font-family: "AtkinsonHyperlegibleNextVF-Variable";
+    src: url('/fonts/AtkinsonHyperlegibleNextVF-Variable.woff2');
+}
+@font-face {
+    font-family: "AtkinsonHyperlegibleMonoVF-Variable";
+    src: url('/fonts/AtkinsonHyperlegibleMonoVF-Variable.woff2');
+}
 input,button{border:1px solid var(--lines);background-color: transparent;color:var(--body);padding:5px 8px;}
 form {margin-bottom: 1em;}
 a,body,h1,h2,h3,h4,h5,html,li,p,span,strong,u,ul{margin:0;padding:0;border:0;font:inherit;vertical-align:baseline}
-body{font-family:Consolas,monaco,monospace;font-size:130%;line-height:1.4;margin:3% auto;padding:0 15px;max-width:50em;background:var(--bg);color:var(--body);}
+body{font-family:"AtkinsonHyperlegibleNextVF-Variable",Consolas,monaco,monospace;font-size:130%;line-height:1.4;margin:3% auto;padding:0 15px;max-width:50em;background:var(--bg);color:var(--body);}
+pre,code{font-family:"AtkinsonHyperlegibleMonoVF-Variable",Consolas,monaco,monospace;}
 ul{list-style-type: none;margin-left:1rem;}
 ul>li:before {content:"-";position:absolute;margin-left:-1.1rem;}
 ul li:last-of-type {margin-bottom:10px;}
@@ -26,11 +35,11 @@ hr{border-bottom: 1px solid var(--lines);}
 h1{font-size:28px;margin-bottom:1rem;color:var(--head1);}
 h1:not(:first-of-type){margin-top:2rem;}
 h2{font-size:24px;margin-top:2rem;margin-bottom:1rem;color:var(--head2);border-bottom: 1px solid var(--head2);}
-h3{font-weight:bold;;margin-top:2rem;margin-bottom:1rem;color:var(--head3);}
-h4{font-style:italic;margin-top:2rem;margin-bottom:1rem;color:var(--head4);}
+h3{font-weight:bold;font-variation-settings:"wght" 500;margin-top:2rem;margin-bottom:1rem;color:var(--head3);}
+h4{font-style:italic;font-variation-settings:"ital" 1;font-synthesis:none;margin-top:2rem;margin-bottom:1rem;color:var(--head4);}
 h5{margin-top:2rem;margin-bottom:1rem;color:var(--head5);}
-strong{font-weight:700;}
-em{font-style:italic;}
+strong{font-weight:700;font-variation-settings:"wght" 700;}
+em{font-style:italic;font-variation-settings:"ital" 1;font-synthesis:none;}
 u{text-decoration: underline;}
 input[type="checkbox"] { position: relative; top: 4px; width: 1.5em; height: 1.5em; border: 2px solid var(--checkbg); border-radius: 4px; appearance: none; outline: 1px solid var(--checkfg); cursor: pointer; }
 input[type="checkbox"]:checked { background: var(--checkfg); }
@@ -50,7 +59,7 @@ sup{vertical-align:super;font-size:0.5em;}
 .vimwikitag::before{content:'🏷'; padding-right: 3px;}
 .footnotes-sep{margin-top: 2em;}
 .footnotes{font-size:var(--small);}
-img{max-width:100%;height:auto;vertical-align:middle;font-style:italic;background-repeat:no-repeat;background-size:cover;shape-margin:0.75rem;}
+img{max-width:100%;height:auto;vertical-align:middle;font-style:italic;font-variation-settings:"ital" 1;font-synthesis:none;background-repeat:no-repeat;background-size:cover;shape-margin:0.75rem;}
 
 @media (prefers-color-scheme: light) {
 	:root {
@@ -70,5 +79,5 @@ img{max-width:100%;height:auto;vertical-align:middle;font-style:italic;backgroun
 	}
 	a{color:var(--body);text-decoration:underline;text-decoration-color:var(--link);text-decoration-skip-ink:none;text-decoration-thickness:0.3rem;text-underline-offset:-0.25rem;transition:text-decoration 0.3s;}
 	a:hover{text-decoration-color:var(--linkhover);text-decoration-skip-ink:none;text-decoration-thickness:0.5rem;}
-	h1,h2,h3,h4,h5{font-weight:bold;}
+	h1,h2,h3,h4,h5{font-weight:bold;font-variation-settings:"wght" 500;}
 }
