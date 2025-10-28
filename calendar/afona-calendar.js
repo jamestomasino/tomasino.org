@@ -45,6 +45,30 @@ const LEN_MEANINGS = {
   'Sylara': 'Forest mysteries, stories, mysticism'
 };
 
+const AFONA_HOLIDAYS = [
+  {
+    month: 'Frunel', week: 1, len: 'Solun', period: false,
+    title: 'Viriluin', // Afonan title
+    description: 'Ceremonies and feasts celebrating the return of light after the longest night.'
+  },
+  {
+    month: 'Calia', week: 2, len: 'Sylara', period: false,
+    title: 'Sylithra',
+    description: 'Lantern festival at midsummer, floating lanterns for unity and guidance.'
+  },
+  {
+    month: 'Graven', week: 4, len: 'Eoryth', period: false,
+    title: 'Eoryneth',
+    description: 'Mist lamps lit for ancestor remembrance in mountain homes.'
+  },
+  {
+    month: 'Luthane', week: null, len: 'Sylara', period: true,
+    title: 'Luthane Festival',
+    description: 'Out-of-time rituals, communal reflection, and ancestor honor.'
+  }
+  // Add more holidays as needed
+];
+
 const MONTH_LENS = 60; // 5 weeks * 12 lens
 const YEAR_LENS = 720; // 12 months * 60 lens
 const LUTHANE_LENS = 12; // 1 extra week, 12 lens
@@ -68,7 +92,9 @@ function convertToAfona(date, duskLen) {
   const afonaYear = getAfonaYear(date.getFullYear());
   const dayOfYear = getDayOfYear(date);
   const totalLenIndex = ((dayOfYear - 1) * 2) + (duskLen ? 1 : 0);
-  let output = '', week, len, month, relational;
+  let output = '', week, len, month, relational, holidayFound;
+  let isLuthanePeriod = false;
+
   if (totalLenIndex < YEAR_LENS) {
     const monthIndex = Math.floor(totalLenIndex / MONTH_LENS);
     month = AFONA_MONTHS[monthIndex];
@@ -77,14 +103,21 @@ function convertToAfona(date, duskLen) {
     week = Math.floor(lensInMonth / 12) + 1;
     len = AFONA_LEN[lensInMonth % 12];
     output =
-      `The ${getOrdinal(week)} ${abbrLen(len)} ${relational} ${abbrMonth(month)} in the ${getOrdinal(afonaYear)} year after Alliance.`;
+      `The ${getOrdinal(week)} <span class="len">${abbrLen(len)}</span> ${relational} <span class="month">${abbrMonth(month)}</span> in the ${getOrdinal(afonaYear)} year after Alliance.`;
+    holidayFound = getMatchingHoliday(month, week, len, false);
   } else {
     month = 'Luthane';
     relational = RELATIONAL[month];
+    isLuthanePeriod = true;
     const luthaneLen = totalLenIndex - YEAR_LENS;
     len = AFONA_LEN[luthaneLen % 12];
     output =
-      `The ${abbrLen(len)} ${relational} ${abbrMonth(month)} in the ${getOrdinal(afonaYear)} year after Alliance.`;
+      `The <span class="len">${abbrLen(len)}</span> ${relational} <span class="month">${abbrMonth(month)}</span> in the ${getOrdinal(afonaYear)} year after Alliance.`;
+    holidayFound = getMatchingHoliday(month, null, len, true);
+  }
+
+  if (holidayFound) {
+    output += `<div class="holiday"><span style="font-weight:bold;">Holiday:</span> <span style="font-style:italic;"><abbr title="${holidayFound.description}">${holidayFound.title}</abbr></span></div>`;
   }
   return output;
 }
@@ -108,6 +141,15 @@ function getDayOfYear(date) {
 function getOrdinal(n) {
   const s=["th","st","nd","rd"], v=n%100;
   return n+(s[(v-20)%10]||s[v]||s[0]);
+}
+
+function getMatchingHoliday(month, week, len, isLuthanePeriod) {
+  return AFONA_HOLIDAYS.find(holiday =>
+    holiday.month === month &&
+    holiday.len === len &&
+    holiday.period === isLuthanePeriod &&
+    (isLuthanePeriod ? true : holiday.week === week)
+  );
 }
 
 // Default to now
