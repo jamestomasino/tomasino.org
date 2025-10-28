@@ -47,20 +47,80 @@ const LEN_MEANINGS = {
 
 const AFONA_HOLIDAYS = [
   {
-    month: 'Frunel', week: 1, len: 'Solun', period: false,
-    title: 'Viriluin', // Afonan title
+    month: 'Frunel', week: 1, len: 'Solun',
+    title: 'Return of Light (Viriluin)', // Afonan title
     description: 'Ceremonies and feasts celebrating the return of light after the longest night.'
   },
   {
-    month: 'Calia', week: 2, len: 'Sylara', period: false,
-    title: 'Sylithra',
+    month: 'Calia', week: 2, len: 'Sylara',
+    title: 'Festival of Lanterns (Sylithra)',
     description: 'Lantern festival at midsummer, floating lanterns for unity and guidance.'
   },
   {
-    month: 'Graven', week: 4, len: 'Eoryth', period: false,
-    title: 'Eoryneth',
+    month: 'Graven', week: 4, len: 'Eoryth',
+    title: 'Mist\'s Return (Eoryneth)',
     description: 'Mist lamps lit for ancestor remembrance in mountain homes.'
   },
+  {
+    month: 'Thirune', week: 3, len: 'Noctira',
+    title: 'Wanderer\'s Vigil (Norathen)',
+    description: 'Vigil for travelers on thawing trails; northern riverfolk light lanterns for safe return.'
+  },
+  {
+    month: 'Hembric', week: 1, len: 'Tharka',
+    title: "Hembric’s Voyage (Hembrikuin)",
+    description: 'Parades and river regattas commemorating Hembric’s canal expedition; contracts renewed.'
+  },
+  {
+    month: 'Damaris', week: 1, len: 'Duskane',
+    title: "Joining Eve (Kaviral)",
+    description: 'Clan alliance renewal—oath feasts, gathering of clan leaders, origin legal charters.'
+  },
+  {
+    month: 'Obrinth', week: 5, len: 'Aminel',
+    title: "Grand Reckoning (Obrithain)",
+    description: 'Ledgers closed, debts settled, ancestor honoring, and winter stores shared.'
+  },
+  {
+    month: 'Falaris', week: 1, len: 'Eoryth',
+    title: "Forebears’ Promise (Halvesset)",
+    description: 'Sworn homage to founding ancestors; river stone offerings, youth naming ceremonies.'
+  },
+  {
+    month: 'Serinil', week: 3, len: 'Varka',
+    title: "Grain Crossing (Varkhuma)",
+    description: 'Grain barge festival; southern merchants race loaded skiffs to mark harvest peak/trade closing.'
+  },
+  {
+    month: 'Thirune', week: 4, len: 'Myrrin',
+    title: "Rootwater Day (Tornulin)",
+    description: 'Soil blessing and feasts—descendants of canal laborers honor the imported plants that now thrive.'
+  },
+  {
+    month: 'Frunel', week: 5, len: 'Noctira',
+    title: "Icefall Vigil (Sennoryth)",
+    description: 'Northmost villages watch the final ice calving and make offerings for the health of river trade.'
+  },
+  {
+    month: 'Verrin', week: 2, len: 'Solun',
+    title: "Emberlength (Calythel)",
+    description: 'Fire-dance and poetry night for diaspora kin, celebrating resilience and shared stories.'
+  },
+  {
+    month: 'Hembric', week: 5, len: 'Zarun',
+    title: "Grand Portage (Yamarin)",
+    description: 'Accounts and port records reviewed, grand market auction, honors for river pilots.'
+  },
+  {
+    month: 'Verrin', week: 4, len: 'Tharka',
+    title: "Raincall (Felynthir)",
+    description: 'Choral gathering to request “just enough” flood; legend says river gods choose the balance.'
+  },
+  {
+    month: 'Damaris', week: 3, len: 'Solun',
+    title: "Memory Dawn (Jonareth)",
+    description: 'Morning songs at graves and riverside shrines; sharing food with departed kin.'
+  }
 ];
 
 const MONTH_LENS = 60; // 5 weeks * 12 lens
