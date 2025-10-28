@@ -271,7 +271,7 @@ function showMonthNames() {
   out += "<p>Each month is 5 weeks of 12 lens (equivalent to 30 days). The extra time at the end of the year is called Luthane.</p>";
   out += "<ol class='info-list'>";
   AFONA_MONTHS.forEach(m =>
-    out += `<li>${m} - ${MONTH_MEANINGS[m]}</li>`
+    out += `<li><abbr title="${MONTH_MEANINGS[m] || ''}">${m}</abbr></li>`
   );
   // Special Luthane entry
   out += `<li class="luthane-month">Luthane - ${MONTH_MEANINGS['Luthane']}</li>`;

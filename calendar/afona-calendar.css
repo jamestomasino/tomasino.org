@@ -41,21 +41,21 @@ h2 {
   margin: 1em auto;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
 }
 
 .toggle-row {
   margin: 1em auto;
   width: 100%;
   max-width: 380px;
-  text-align: left;
+  text-align: center;
 }
 .toggle-switch {
   display: block;
   position: relative;
-  width: 100%;
+  width: 80px;
   height: 36px;
-  margin-top: 5px;
+  margin: 5px auto;
 }
 
 .toggle-switch input { display: none; }
@@ -93,10 +93,10 @@ input:checked + .slider:before {
 .toggle-labels {
   display: flex;
   justify-content: space-between;
-  width: 100%;
+  width: 80%;
   font-size: 1em;
   color: #5f429c;
-  margin-top: 0.2em;
+  margin: -32px auto 0 auto;
 }
 label {
   font-size: 1.5em;
