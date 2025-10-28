@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Afonan Calendar Converter</title>
+  <link rel="stylesheet" href="afona-calendar.css">
+</head>
+<body>
+ <h2>Afonan Calendar Converter</h2>
+  <div class="input-row">
+    <label for="gregorian-date">Select a Gregorian date:</label>
+    <input type="date" id="gregorian-date">
+  </div>
+  <div class="toggle-row">
+    <label>Select len period:</label>
+    <div>
+      <label class="toggle-switch">
+        <input type="checkbox" id="len-toggle">
+        <span class="slider"></span>
+      </label>
+      <div class="toggle-labels">
+        <span id="len-dawn">Dawn-Dusk</span>
+        <span id="len-dusk">Dusk-Dawn</span>
+      </div>
+    </div>
+  </div>
+  <div id="afonan-date"></div>
+  <script src="afona-calendar.js"></script>
+</body>
+</html>

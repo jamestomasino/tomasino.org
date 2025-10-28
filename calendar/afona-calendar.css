@@ -1,0 +1,152 @@
+/* afona-calendar.css */
+
+/* Basic resets and layout */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  background: #f7f6fa;
+}
+
+h2 {
+  font-size: 2.2em;
+  margin-bottom: 1em;
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.input-row {
+  width: 100%;
+  max-width: 380px;
+  margin: 1em auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.toggle-row {
+  margin: 1em auto;
+  width: 100%;
+  max-width: 380px;
+  text-align: left;
+}
+.toggle-switch {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  height: 36px;
+}
+
+.toggle-switch input { display: none; }
+
+/* Slider bar */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: #c6bbec;
+  border-radius: 36px;
+  transition: background 0.4s;
+}
+
+/* Slider knob (ball) */
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 28px; width: 28px;
+  left: 4px; bottom: 4px;
+  background: #fff;
+  border-radius: 50%;
+  transition: left 0.4s, right 0.4s;
+  box-shadow: 0 0 6px #8882a5;
+}
+
+/* When checked, animate background and knob to right */
+input:checked + .slider {
+  background: #6c54a3;
+}
+input:checked + .slider:before {
+  left: auto;
+  right: 4px;
+}
+.toggle-labels {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 1.05em;
+  color: #5f429c;
+  margin-top: .2em;
+}
+label {
+  font-size: 1.4em;
+  font-weight: 500;
+  margin-bottom: 0.5em;
+  color: #302b46;
+}
+
+input[type="date"],
+input[type="time"] {
+  width: 100%;
+  font-size: 1.35em;
+  padding: 0.25em 0.5em;
+  border-radius: 0.4em;
+  border: 1px solid #b5b5c8;
+  background: #fff;
+  transition: border-color 0.2s;
+}
+
+input[type="date"]:focus,
+input[type="time"]:focus {
+  border-color: #6c54a3;
+  outline: none;
+}
+
+#afonan-date {
+  margin-top: 2em;
+  font-size: 1.8em;
+  font-weight: 600;
+  color: #5f429c;
+  padding: 1.2em 0.5em 0.5em 0.5em;
+  text-align: center;
+  background: #ede9f7;
+  border-radius: 0.75em;
+  box-shadow: 0 4px 10px rgba(130, 120, 180, 0.07);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 520px) {
+  h2 {
+    font-size: 1.4em;
+    margin-bottom: 0.5em;
+  }
+
+  .input-row {
+    max-width: 98vw;
+    margin: 0.7em 0;
+  }
+
+  label {
+    font-size: 1.1em;
+  }
+
+  input[type="date"],
+  input[type="time"] {
+    font-size: 1em;
+    padding: 0.18em 0.35em;
+  }
+
+  #afonan-date {
+    font-size: 1.2em;
+    padding: 0.7em 0.25em 0.4em 0.25em;
+  }
+}
