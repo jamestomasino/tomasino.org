@@ -14,6 +14,37 @@ const AFONA_LEN = [
   'Zarun','Duskane','Tharka','Velora','Aminel','Sylara'
 ];
 
+const MONTH_MEANINGS = {
+  'Frunel': 'Deep winter; renewal and the return of light',
+  'Thirune': 'First thaw; awakening and hope',
+  'Eldurn': 'River surge; breaking ice and fiery renewal',
+  'Falaris': 'Spring; budding, promise, new growth',
+  'Lysan': 'River at full rush; sparkling warmth',
+  'Hembric': 'Trade season; legendary explorer Hembric',
+  'Verrin': 'Thunder; storm, hunting, festivals',
+  'Calia': 'Midsummer bounty; abundance and celebration',
+  'Serinil': 'Early harvest; winnowing, cool winds',
+  'Damaris': 'Alliance and unity; captain Damaris',
+  'Graven': 'Mists and migration; quiet remembrance',
+  'Obrinth': 'Closing year; snow, ancestors, reflection',
+  'Luthane': 'Days Between; liminal week outside the calendar'
+};
+
+const LEN_MEANINGS = {
+  'Solun': 'Renewal, sun, new beginnings',
+  'Noctira': 'Night guardian, dreams, protection',
+  'Varka': 'River goddess, commerce, life',
+  'Shadda': 'Shadow, hidden currents, safety',
+  'Myrrin': 'Mountain mist, ancestors, clarity',
+  'Eoryth': 'Dusk, echo, transition, remembrance',
+  'Zarun': 'Market, gathering, trade',
+  'Duskane': 'Bonding, oaths, alliances, closure',
+  'Tharka': 'Fields, harvest, growth',
+  'Velora': 'Veil, fertility, hidden blessings',
+  'Aminel': 'Wisdom, contemplation, prophecy',
+  'Sylara': 'Forest mysteries, stories, mysticism'
+};
+
 const MONTH_LENS = 60; // 5 weeks * 12 lens
 const YEAR_LENS = 720; // 12 months * 60 lens
 const LUTHANE_LENS = 12; // 1 extra week, 12 lens
@@ -25,29 +56,46 @@ function getAfonaYear(gregorianYear) {
   return gregorianYear - EPOCH_START_YEAR + 1;
 }
 
+function abbrMonth(name) {
+  return `<abbr title="${MONTH_MEANINGS[name] || ''}">${name}</abbr>`;
+}
+
+function abbrLen(name) {
+  return `<abbr title="${LEN_MEANINGS[name] || ''}">${name}</abbr>`;
+}
+
 function convertToAfona(date, duskLen) {
   const afonaYear = getAfonaYear(date.getFullYear());
   const dayOfYear = getDayOfYear(date);
-  // DuskLen: false = Dawn-Dusk (6am-6pm), true = Dusk-Dawn (6pm-6am)
-  // Each len is 12 hours, two lens per day.
-  const totalLenIndex = ((dayOfYear - 1) * 2) + (duskLen ? 1 : 0); // 0 for Dawn-Dusk, 1 for Dusk-Dawn
+  const totalLenIndex = ((dayOfYear - 1) * 2) + (duskLen ? 1 : 0);
   let output = '', week, len, month, relational;
   if (totalLenIndex < YEAR_LENS) {
     const monthIndex = Math.floor(totalLenIndex / MONTH_LENS);
     month = AFONA_MONTHS[monthIndex];
     relational = RELATIONAL[month];
     const lensInMonth = totalLenIndex % MONTH_LENS;
-    week = Math.floor(lensInMonth / 12) + 1; // 1-based week, never > 5 in month
+    week = Math.floor(lensInMonth / 12) + 1;
     len = AFONA_LEN[lensInMonth % 12];
-    output = `The ${getOrdinal(week)} ${len} ${relational} ${month} in the ${getOrdinal(afonaYear)} year after Alliance.`;
+    output =
+      `The ${getOrdinal(week)} ${abbrLen(len)} ${relational} ${abbrMonth(month)} in the ${getOrdinal(afonaYear)} year after Alliance.`;
   } else {
     month = 'Luthane';
     relational = RELATIONAL[month];
     const luthaneLen = totalLenIndex - YEAR_LENS;
     len = AFONA_LEN[luthaneLen % 12];
-    output = `The ${len} ${relational} Luthane in the ${getOrdinal(afonaYear)} year after Alliance.`;
+    output =
+      `The ${abbrLen(len)} ${relational} ${abbrMonth(month)} in the ${getOrdinal(afonaYear)} year after Alliance.`;
   }
   return output;
+}
+
+function updateAfonanDate() {
+  const dateVal = dateInput.value;
+  const duskLen = lenToggle.checked;
+  if (!dateVal) return;
+  const date = new Date(dateVal + "T00:00:00");
+  const afonanDate = convertToAfona(date, duskLen);
+  document.getElementById('afonan-date').innerHTML = afonanDate;
 }
 
 function getDayOfYear(date) {
@@ -76,14 +124,6 @@ function isDuskLenDefault() {
 }
 lenToggle.checked = isDuskLenDefault();
 
-function updateAfonanDate() {
-  const dateVal = dateInput.value;
-  const duskLen = lenToggle.checked;
-  if (!dateVal) return;
-  const date = new Date(dateVal + "T00:00:00");
-  const afonanDate = convertToAfona(date, duskLen);
-  document.getElementById('afonan-date').textContent = afonanDate;
-}
 dateInput.addEventListener('change', updateAfonanDate);
 lenToggle.addEventListener('change', updateAfonanDate);
 updateAfonanDate();
