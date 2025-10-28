@@ -257,11 +257,10 @@ function showHolidays() {
 function showLenOfWeek() {
   let out = "<div class='info-title'>Len of the Week</div>";
   out += "<p>There are 12 lens in a week, each being 12 hours in length. From dawn until dusk is one len, and from dusk until dawn is the next.</p>";
-  out += "<div class='len-group-label'>Daytime Lens</div><ol class='info-list'>";
+  out += "<ol class='info-list'>"
   // Daytime: Even-indexed, starting at 0
   AFONA_LEN.forEach((l, i) => {
-    if (i === 6) out += "</ol><div class='len-group-label'>Nighttime Lens</div><ol class='info-list'>"; // Switch header at halfway
-    out += `<li${i < 6 ? " class='day-len'" : " class='night-len'"}><abbr title="${LEN_MEANINGS[l] || ''}">${l}</abbr></li>`;
+    out += `<li ${i % 2 ? "class='day-len'" : "class='night-len'"}><abbr title="${LEN_MEANINGS[l] || ''}">${l}</abbr></li>`;
   });
   out += "</ol>";
   infoOutput.innerHTML = out;
