@@ -220,3 +220,107 @@ lenToggle.checked = isDuskLenDefault();
 dateInput.addEventListener('change', updateAfonanDate);
 lenToggle.addEventListener('change', updateAfonanDate);
 updateAfonanDate();
+
+
+const holidaysBtn = document.getElementById('holidays-btn');
+const lenBtn = document.getElementById('len-btn');
+const monthBtn = document.getElementById('month-btn');
+const infoOutput = document.getElementById('info-output');
+
+function sortHolidays(holidays) {
+  // Orders by month index, week then len index
+  const monthOrder = AFONA_MONTHS.concat(['Luthane']);
+  const lenOrder = AFONA_LEN;
+  return holidays.slice().sort((a, b) => {
+    const miA = monthOrder.indexOf(a.month), miB = monthOrder.indexOf(b.month);
+    if (miA !== miB) return miA - miB;
+    if ((a.week || 0) !== (b.week || 0)) return (a.week || 0) - (b.week || 0);
+    const liA = lenOrder.indexOf(a.len), liB = lenOrder.indexOf(b.len);
+    return liA - liB;
+  });
+}
+
+function showHolidays() {
+  const sorted = sortHolidays(AFONA_HOLIDAYS);
+  let out = '<div class="info-title">Afonan Holidays (calendar order)</div><ul class="info-list">';
+  sorted.forEach(h =>
+    out += `<li>
+      <abbr title="${MONTH_MEANINGS[h.month] || (h.month === 'Luthane' ? 'Days Between' : '')}">${h.month}</abbr>,
+      ${h.week ? 'Week ' + h.week + ', ' : ''}<abbr title="${LEN_MEANINGS[h.len] || ''}">${h.len}</abbr>:
+      <span style="font-weight:bold;"><abbr title="${h.description}">${h.title}</abbr></span>
+    </li>`
+  );
+  out += '</ul>';
+  infoOutput.innerHTML = out;
+}
+
+function showLenOfWeek() {
+  let out = "<div class='info-title'>Len of the Week</div>";
+  out += "<div class='len-group-label'>Daytime Lens</div><ol class='info-list'>";
+  // Daytime: Even-indexed, starting at 0
+  AFONA_LEN.forEach((l, i) => {
+    if (i === 6) out += "</ol><div class='len-group-label'>Nighttime Lens</div><ol class='info-list'>"; // Switch header at halfway
+    out += `<li${i < 6 ? " class='day-len'" : " class='night-len'"}><abbr title="${LEN_MEANINGS[l] || ''}">${l}</abbr></li>`;
+  });
+  out += "</ol>";
+  infoOutput.innerHTML = out;
+}
+
+function showMonthNames() {
+  let out = "<div class='info-title'>Month Names</div><ol class='info-list'>";
+  AFONA_MONTHS.forEach(m =>
+    out += `<li><abbr title="${MONTH_MEANINGS[m] || ''}">${m}</abbr></li>`
+  );
+  // Special Luthane entry
+  out += `<li class="luthane-month">
+    <abbr title="${MONTH_MEANINGS['Luthane'] || 'Days Between; liminal week outside the calendar'}">Luthane</abbr>
+    <span class="luthane-note">(The Days Between)</span>
+  </li>`;
+  out += "</ol>";
+  infoOutput.innerHTML = out;
+}
+
+// Attach listeners
+let activeTab = null;
+
+holidaysBtn.addEventListener('click', () => {
+  if (activeTab === 'holidays') {
+    infoOutput.innerHTML = '';
+    activeTab = null;
+  } else {
+    showHolidays();
+    activeTab = 'holidays';
+  }
+});
+lenBtn.addEventListener('click', () => {
+  if (activeTab === 'len') {
+    infoOutput.innerHTML = '';
+    activeTab = null;
+  } else {
+    showLenOfWeek();
+    activeTab = 'len';
+  }
+});
+monthBtn.addEventListener('click', () => {
+  if (activeTab === 'month') {
+    infoOutput.innerHTML = '';
+    activeTab = null;
+  } else {
+    showMonthNames();
+    activeTab = 'month';
+  }
+});
+
+function setActiveButton(btnId) {
+  document.querySelectorAll('.button-row button').forEach(b => b.classList.remove('active'));
+  if (btnId) document.getElementById(btnId).classList.add('active');
+}
+
+// In each event handler, after updating .innerHTML...
+setActiveButton(activeTab ? btnIdForTab(activeTab) : null);
+
+function btnIdForTab(tabname) {
+  return tabname === 'holidays' ? 'holidays-btn' :
+         tabname === 'len' ? 'len-btn' :
+         tabname === 'month' ? 'month-btn' : null;
+}
