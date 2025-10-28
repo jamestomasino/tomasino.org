@@ -256,6 +256,7 @@ function showHolidays() {
 
 function showLenOfWeek() {
   let out = "<div class='info-title'>Len of the Week</div>";
+  out += "<p>There are 12 len in a week, each being 12 hours in length. From dawn until dusk is one len, and from dusk until dawn is the next.</p>";
   out += "<div class='len-group-label'>Daytime Lens</div><ol class='info-list'>";
   // Daytime: Even-indexed, starting at 0
   AFONA_LEN.forEach((l, i) => {
@@ -267,15 +268,14 @@ function showLenOfWeek() {
 }
 
 function showMonthNames() {
-  let out = "<div class='info-title'>Month Names</div><ol class='info-list'>";
+  let out = "<div class='info-title'>Month Names</div>";
+  out += "<p>Each month is 5 weeks of 12 len (equivalent to 30 days). The extra time at the end of the year is called Luthane.</p>";
+  out += "<ol class='info-list'>";
   AFONA_MONTHS.forEach(m =>
-    out += `<li><abbr title="${MONTH_MEANINGS[m] || ''}">${m}</abbr></li>`
+    out += `<li>${m} - ${MONTH_MEANINGS[m]}</li>`
   );
   // Special Luthane entry
-  out += `<li class="luthane-month">
-    <abbr title="${MONTH_MEANINGS['Luthane'] || 'Days Between; liminal week outside the calendar'}">Luthane</abbr>
-    <span class="luthane-note">(The Days Between)</span>
-  </li>`;
+  out += `<li class="luthane-month">Luthane - ${MONTH_MEANINGS['Luthane']}</li>`;
   out += "</ol>";
   infoOutput.innerHTML = out;
 }
