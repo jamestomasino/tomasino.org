@@ -264,15 +264,21 @@ function sortHolidays(holidays) {
 }
 
 function showHolidays() {
-  const sorted = sortHolidays(AFONA_HOLIDAYS);
+  const sorted = sortHolidays(AFONA_HOLIDAYS).filter(h => h.month !== 'Luthane');
   let out = '<div class="info-title">Afonan Holidays (calendar order)</div><ul class="info-list">';
-  sorted.forEach(h =>
+  sorted.forEach(h => {
+    const relational = RELATIONAL[h.month];
+    let phrase = `The ${getOrdinal(h.week)} <span class="len">${abbrLen(h.len)}</span> ${relational} <span class="month">${abbrMonth(h.month)}</span>`;
     out += `<li>
-      <abbr title="${MONTH_MEANINGS[h.month] || (h.month === 'Luthane' ? 'Days Between' : '')}">${h.month}</abbr>,
-      ${h.week ? 'Week ' + h.week + ', ' : ''}<abbr title="${LEN_MEANINGS[h.len] || ''}">${h.len}</abbr>:
+      ${phrase}:
       <span style="font-weight:bold;"><abbr title="${h.description}">${h.title}</abbr></span>
-    </li>`
-  );
+    </li>`;
+  });
+  // Manually append Luthane Festival
+  out += `<li>
+    The week during <span class="month">Luthane</span>:
+    <span style="font-weight:bold;"><abbr title="Out-of-time rites for unions and commitments; communal feasts, vows, and new partnerships celebrated">Luthane Festival (Helkavrin)</abbr></span>
+  </li>`;
   out += '</ul>';
   infoOutput.innerHTML = out;
 }
@@ -291,7 +297,7 @@ function showLenOfWeek() {
 
 function showMonthNames() {
   let out = "<div class='info-title'>Month Names</div>";
-  out += "<p>Each month is 5 weeks of 12 lens (equivalent to 30 days). The extra time at the end of the year is called Luthane.</p>";
+  out += "<p>Each month is 5 weeks of 12 lens (equivalent to 30 days). The winter solstice begins Luthane, a liminal week outside of calendar time of either 10 or 12 len.</p>";
   out += "<ol class='info-list'>";
   AFONA_MONTHS.forEach(m =>
     out += `<li><abbr title="${MONTH_MEANINGS[m] || ''}">${m}</abbr></li>`
