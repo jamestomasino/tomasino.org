@@ -127,8 +127,8 @@ const MONTH_LENS = 60; // 5 weeks * 12 lens
 const YEAR_LENS = 720; // 12 months * 60 lens
 const LUTHANE_LENS = 12; // 1 extra week, 12 lens
 
-// Year 1 is 1206, Year 821 is 2026
-const EPOCH_START_YEAR = 1206;
+// Epoch: The Afona calendar year 1 began in 1595 BCE, so year 821 is 774 BCE.
+const EPOCH_START_YEAR = 1206 // mimics 2026 as 821
 
 function getAfonaYear(gregorianYear) {
   return gregorianYear - EPOCH_START_YEAR + 1;
