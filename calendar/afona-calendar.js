@@ -143,13 +143,41 @@ function abbrLen(name) {
 }
 
 function convertToAfona(date, duskLen) {
-  const afonaYear = getAfonaYear(date.getFullYear());
-  const dayOfYear = getDayOfYear(date);
-  const totalLenIndex = ((dayOfYear - 1) * 2) + (duskLen ? 1 : 0);
-  let output = '', week, len, month, relational, holidayFound;
-  let isLuthanePeriod = false;
+  const y = date.getFullYear();
+  const isLeap = new Date(y, 1, 29).getMonth() === 1;
+  const luthaneStart = new Date(y, 11, isLeap ? 20 : 21); // Dec 20 in leap years, Dec 21 otherwise
+  const luthaneDays = isLeap ? 6 : 5;
+  const luthaneEnd = new Date(luthaneStart.getTime() + luthaneDays * 86400000);
 
-  if (totalLenIndex < YEAR_LENS) {
+  // Determine Afona calendar year start based on solstice/Luthane
+  let solsticeYear = y;
+  if (date < luthaneStart) solsticeYear = y - 1; // Use previous Afona year if before Luthane
+
+  // Recalculate everything around solsticeYear
+  const isLeapSolstice = new Date(solsticeYear, 1, 29).getMonth() === 1;
+  const luthaneStartSolstice = new Date(solsticeYear, 11, isLeapSolstice ? 20 : 21);
+  const luthaneDaysSolstice = isLeapSolstice ? 6 : 5;
+  const luthaneEndSolstice = new Date(luthaneStartSolstice.getTime() + luthaneDaysSolstice * 86400000);
+
+  let afonaYear = solsticeYear - EPOCH_START_YEAR + 2;
+
+  // Luthane period: date between start and end (inclusive of start, exclusive of end)
+  if (date >= luthaneStartSolstice && date < luthaneEndSolstice) {
+    const luthaneDay = Math.floor((date - luthaneStartSolstice) / 86400000);
+    const lenIndex = (luthaneDay * 2) + (duskLen ? 1 : 0);
+    const len = AFONA_LEN[lenIndex % 12];
+    let output = `The <span class="len">${abbrLen(len)}</span> during <span class="month">${abbrMonth("Luthane")}</span> in the ${getOrdinal(afonaYear)} year after Alliance.`;
+    output += `<div class="holiday"><span style="font-weight:bold;">Holiday:</span> <span style="font-style:italic;"><abbr title="Out-of-time rituals, communal reflection, and ancestor honor.">Luthane Festival</abbr></span></div>`;
+    return output;
+  }
+
+  // After Luthane: start calendar with Frunel
+  const afonaYearStart = luthaneEndSolstice;
+  const daysSinceStart = Math.floor((date - afonaYearStart) / 86400000);
+  const totalLenIndex = (daysSinceStart * 2) + (duskLen ? 1 : 0);
+
+  let output = '', week, len, month, relational, holidayFound;
+  if (totalLenIndex >= 0 && totalLenIndex < YEAR_LENS) {
     const monthIndex = Math.floor(totalLenIndex / MONTH_LENS);
     month = AFONA_MONTHS[monthIndex];
     relational = RELATIONAL[month];
@@ -161,17 +189,12 @@ function convertToAfona(date, duskLen) {
     if (holidayFound) {
       output += `<div class="holiday"><span style="font-weight:bold;">Holiday:</span> <span style="font-style:italic;"><abbr title="${holidayFound.description}">${holidayFound.title}</abbr></span></div>`;
     }
+    return output;
   } else {
-    month = 'Luthane';
-    relational = RELATIONAL[month];
-    isLuthanePeriod = true;
-    const luthaneLen = totalLenIndex - YEAR_LENS;
-    len = AFONA_LEN[luthaneLen % 12];
-    output = `The <span class="len">${abbrLen(len)}</span> ${relational} <span class="month">${abbrMonth(month)}</span> in the ${getOrdinal(afonaYear)} year after Alliance.`;
-    output += `<div class="holiday"><span style="font-weight:bold;">Holiday:</span> <span style="font-style:italic;"><abbr title="Out-of-time rituals, communal reflection, and ancestor honor.">Luthane Festival</abbr></span></div>`;
+    // Previous year’s late months: calculate using previous year
+    // You may wish to wrap around or indicate last month/week/len of prior year here
+    return "Date exceeds Afona calendar year range.";
   }
-
-  return output;
 }
 
 function updateAfonanDate() {
