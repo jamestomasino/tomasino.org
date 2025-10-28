@@ -61,12 +61,6 @@ const AFONA_HOLIDAYS = [
     title: 'Eoryneth',
     description: 'Mist lamps lit for ancestor remembrance in mountain homes.'
   },
-  {
-    month: 'Luthane', week: null, len: 'Sylara', period: true,
-    title: 'Luthane Festival',
-    description: 'Out-of-time rituals, communal reflection, and ancestor honor.'
-  }
-  // Add more holidays as needed
 ];
 
 const MONTH_LENS = 60; // 5 weeks * 12 lens
@@ -102,23 +96,21 @@ function convertToAfona(date, duskLen) {
     const lensInMonth = totalLenIndex % MONTH_LENS;
     week = Math.floor(lensInMonth / 12) + 1;
     len = AFONA_LEN[lensInMonth % 12];
-    output =
-      `The ${getOrdinal(week)} <span class="len">${abbrLen(len)}</span> ${relational} <span class="month">${abbrMonth(month)}</span> in the ${getOrdinal(afonaYear)} year after Alliance.`;
-    holidayFound = getMatchingHoliday(month, week, len, false);
+    output = `The ${getOrdinal(week)} <span class="len">${abbrLen(len)}</span> ${relational} <span class="month">${abbrMonth(month)}</span> in the ${getOrdinal(afonaYear)} year after Alliance.`;
+    holidayFound = getMatchingHoliday(month, week, len);
+    if (holidayFound) {
+      output += `<div class="holiday"><span style="font-weight:bold;">Holiday:</span> <span style="font-style:italic;"><abbr title="${holidayFound.description}">${holidayFound.title}</abbr></span></div>`;
+    }
   } else {
     month = 'Luthane';
     relational = RELATIONAL[month];
     isLuthanePeriod = true;
     const luthaneLen = totalLenIndex - YEAR_LENS;
     len = AFONA_LEN[luthaneLen % 12];
-    output =
-      `The <span class="len">${abbrLen(len)}</span> ${relational} <span class="month">${abbrMonth(month)}</span> in the ${getOrdinal(afonaYear)} year after Alliance.`;
-    holidayFound = getMatchingHoliday(month, null, len, true);
+    output = `The <span class="len">${abbrLen(len)}</span> ${relational} <span class="month">${abbrMonth(month)}</span> in the ${getOrdinal(afonaYear)} year after Alliance.`;
+    output += `<div class="holiday"><span style="font-weight:bold;">Holiday:</span> <span style="font-style:italic;"><abbr title="Out-of-time rituals, communal reflection, and ancestor honor.">Luthane Festival</abbr></span></div>`;
   }
 
-  if (holidayFound) {
-    output += `<div class="holiday"><span style="font-weight:bold;">Holiday:</span> <span style="font-style:italic;"><abbr title="${holidayFound.description}">${holidayFound.title}</abbr></span></div>`;
-  }
   return output;
 }
 
@@ -143,13 +135,12 @@ function getOrdinal(n) {
   return n+(s[(v-20)%10]||s[v]||s[0]);
 }
 
-function getMatchingHoliday(month, week, len, isLuthanePeriod) {
+function getMatchingHoliday(month, week, len) {
   return AFONA_HOLIDAYS.find(holiday =>
     holiday.month === month &&
     holiday.len === len &&
-    holiday.period === isLuthanePeriod &&
-    (isLuthanePeriod ? true : holiday.week === week)
-  );
+    holiday.week === week
+  )
 }
 
 // Default to now
