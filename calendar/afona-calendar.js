@@ -48,77 +48,92 @@ const LEN_MEANINGS = {
 const AFONA_HOLIDAYS = [
   {
     month: 'Frunel', week: 1, len: 'Solun',
-    title: 'Return of Light (Viriluin)', // Afonan title
+    title: 'Return of Light',
+    afonan: 'Viriluin',
     description: 'Ceremonies and feasts celebrating the return of light after the longest night.'
   },
   {
     month: 'Calia', week: 2, len: 'Sylara',
-    title: 'Festival of Lanterns (Sylithra)',
+    title: 'Festival of Lanterns',
+    afonan: 'Sylithra',
     description: 'Lantern festival at midsummer, floating lanterns for unity and guidance.'
   },
   {
     month: 'Graven', week: 4, len: 'Eoryth',
-    title: 'Mist\'s Return (Eoryneth)',
+    title: 'Mist\'s Return',
+    afonan: 'Eoryneth',
     description: 'Mist lamps lit for ancestor remembrance in mountain homes.'
   },
   {
     month: 'Thirune', week: 3, len: 'Noctira',
-    title: 'Wanderer\'s Vigil (Norathen)',
+    title: 'Wanderer\'s Vigil',
+    afonan: 'Norathen',
     description: 'Vigil for travelers on thawing trails; northern riverfolk light lanterns for safe return.'
   },
   {
     month: 'Hembric', week: 1, len: 'Tharka',
-    title: "Hembric’s Voyage (Hembrikuin)",
+    title: "Hembric’s Voyage",
+    afonan: 'Hembrikuin',
     description: 'Parades and river regattas commemorating Hembric’s canal expedition; contracts renewed.'
   },
   {
     month: 'Damaris', week: 1, len: 'Duskane',
-    title: "Joining Eve (Kaviral)",
+    title: "Joining Eve",
+    afonan: 'Kaviral',
     description: 'Clan alliance renewal—oath feasts, gathering of clan leaders, origin legal charters.'
   },
   {
     month: 'Obrinth', week: 5, len: 'Aminel',
-    title: "Grand Reckoning (Obrithain)",
+    title: "Grand Reckoning",
+    afonan: 'Obrithain',
     description: 'Ledgers closed, debts settled, ancestor honoring, and winter stores shared.'
   },
   {
     month: 'Falaris', week: 1, len: 'Eoryth',
-    title: "Forebears’ Promise (Halvesset)",
+    title: "Forebears’ Promise",
+    afonan: 'Halvesset',
     description: 'Sworn homage to founding ancestors; river stone offerings, youth naming ceremonies.'
   },
   {
     month: 'Serinil', week: 3, len: 'Varka',
-    title: "Grain Crossing (Varkhuma)",
+    title: "Grain Crossing",
+    afonan: 'Varkhuma',
     description: 'Grain barge festival; southern merchants race loaded skiffs to mark harvest peak/trade closing.'
   },
   {
     month: 'Thirune', week: 4, len: 'Myrrin',
-    title: "Rootwater Day (Tornulin)",
+    title: "Rootwater Day",
+    afonan: 'Tornulin',
     description: 'Soil blessing and feasts—descendants of canal laborers honor the imported plants that now thrive.'
   },
   {
     month: 'Frunel', week: 5, len: 'Noctira',
-    title: "Icefall Vigil (Sennoryth)",
+    title: "Icefall Vigil",
+    afonan: 'Sennoryth',
     description: 'Northmost villages watch the final ice calving and make offerings for the health of river trade.'
   },
   {
     month: 'Verrin', week: 2, len: 'Solun',
-    title: "Emberlength (Calythel)",
+    title: "Emberlength",
+    afonan: 'Calythel',
     description: 'Fire-dance and poetry night for diaspora kin, celebrating resilience and shared stories.'
   },
   {
     month: 'Hembric', week: 5, len: 'Zarun',
-    title: "Grand Portage (Yamarin)",
+    title: "Grand Portage",
+    afonan: 'Yamarin',
     description: 'Accounts and port records reviewed, grand market auction, honors for river pilots.'
   },
   {
     month: 'Verrin', week: 4, len: 'Tharka',
-    title: "Raincall (Felynthir)",
+    title: "Raincall",
+    afonan: 'Felynthir',
     description: 'Choral gathering to request “just enough” flood; legend says river gods choose the balance.'
   },
   {
     month: 'Damaris', week: 3, len: 'Solun',
-    title: "Memory Dawn (Jonareth)",
+    title: "Memory Dawn",
+    afonan: 'Jonareth',
     description: 'Morning songs at graves and riverside shrines; sharing food with departed kin.'
   }
 ];
@@ -135,11 +150,11 @@ function getAfonaYear(gregorianYear) {
 }
 
 function abbrMonth(name) {
-  return `<abbr title="${MONTH_MEANINGS[name] || ''}">${name}</abbr>`;
+  return `<abbr title="${MONTH_MEANINGS[name] || ''}" tabindex="0">${name}</abbr>`;
 }
 
 function abbrLen(name) {
-  return `<abbr title="${LEN_MEANINGS[name] || ''}">${name}</abbr>`;
+  return `<abbr title="${LEN_MEANINGS[name] || ''}" tabindex="0">${name}</abbr>`;
 }
 
 function convertToAfona(date, duskLen) {
@@ -167,7 +182,7 @@ function convertToAfona(date, duskLen) {
     const lenIndex = (luthaneDay * 2) + (duskLen ? 1 : 0);
     const len = AFONA_LEN[lenIndex % 12];
     let output = `The <span class="len">${abbrLen(len)}</span> during <span class="month">${abbrMonth("Luthane")}</span> in the ${getOrdinal(afonaYear)} year after Alliance.`;
-    output += `<div class="holiday"><span style="font-weight:bold;">Holiday:</span> <span style="font-style:italic;"><abbr title="Out-of-time rituals, communal reflection, and ancestor honor.">Luthane Festival</abbr></span></div>`;
+    output += `<div class="holiday"><span style="font-weight:bold;">Holiday:</span> <span style="font-style:italic;"><abbr title="Out-of-time rituals, communal reflection, and ancestor honor." tabindex="0">Luthane Festival</abbr></span></div>`;
     return output;
   }
 
@@ -187,7 +202,7 @@ function convertToAfona(date, duskLen) {
     output = `The ${getOrdinal(week)} <span class="len">${abbrLen(len)}</span> ${relational} <span class="month">${abbrMonth(month)}</span> in the ${getOrdinal(afonaYear)} year after Alliance.`;
     holidayFound = getMatchingHoliday(month, week, len);
     if (holidayFound) {
-      output += `<div class="holiday"><span style="font-weight:bold;">Holiday:</span> <span style="font-style:italic;"><abbr title="${holidayFound.description}">${holidayFound.title}</abbr></span></div>`;
+      output += `<div class="holiday"><span style="font-weight:bold;">Holiday:</span> <span style="font-style:italic;"><abbr title="${holidayFound.description}" tabindex="0">${holidayFound.title}</abbr></span></div>`;
     }
     return output;
   } else {
@@ -270,14 +285,14 @@ function showHolidays() {
     const relational = RELATIONAL[h.month];
     let phrase = `The ${getOrdinal(h.week)} <span class="len">${abbrLen(h.len)}</span> ${relational} <span class="month">${abbrMonth(h.month)}</span>`;
     out += `<li>
-      ${phrase}:
-      <span style="font-weight:bold;"><abbr title="${h.description}">${h.title}</abbr></span>
+      ${phrase}:<br>
+      <span style="font-weight:bold;">${h.title} (<abbr title="${h.description}" tabindex="0">${h.afonan}</abbr>)</span>
     </li>`;
   });
   // Manually append Luthane Festival
   out += `<li>
-    The week during <span class="month">Luthane</span>:
-    <span style="font-weight:bold;"><abbr title="Out-of-time rites for unions and commitments; communal feasts, vows, and new partnerships celebrated">Luthane Festival (Helkavrin)</abbr></span>
+    The week during <span class="month">Luthane</span>:<br>
+    <span style="font-weight:bold;">Luthane Festival (<abbr title="Out-of-time rites for unions and commitments; communal feasts, vows, and new partnerships celebrated" tabindex="0">Helkavrin</abbr>)</span>
   </li>`;
   out += '</ul>';
   infoOutput.innerHTML = out;
@@ -289,7 +304,7 @@ function showLenOfWeek() {
   out += "<ol class='info-list'>"
   // Daytime: Even-indexed, starting at 0
   AFONA_LEN.forEach((l, i) => {
-    out += `<li ${i % 2 ? "class='day-len'" : "class='night-len'"}><abbr title="${LEN_MEANINGS[l] || ''}">${l}</abbr></li>`;
+    out += `<li ${i % 2 ? "class='day-len'" : "class='night-len'"}><abbr title="${LEN_MEANINGS[l] || ''}" tabindex="0">${l}</abbr></li>`;
   });
   out += "</ol>";
   infoOutput.innerHTML = out;
@@ -300,7 +315,7 @@ function showMonthNames() {
   out += "<p>Each month is 5 weeks of 12 lens (equivalent to 30 days). The winter solstice begins Luthane, a liminal week outside of calendar time of either 10 or 12 len.</p>";
   out += "<ol class='info-list'>";
   AFONA_MONTHS.forEach(m =>
-    out += `<li><abbr title="${MONTH_MEANINGS[m] || ''}">${m}</abbr></li>`
+    out += `<li><abbr title="${MONTH_MEANINGS[m] || ''}" tabindex="0">${m}</abbr></li>`
   );
   // Special Luthane entry
   out += `<li class="luthane-month">Luthane - ${MONTH_MEANINGS['Luthane']}</li>`;
