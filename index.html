@@ -38,11 +38,8 @@
           "Hiking"
         ],
         "sameAs": [
-          "https://blog.tomasino.org",
           "https://keybase.io/jamestomasino",
-          "https://labs.tomasino.org",
           "https://github.com/jamestomasino",
-          "https://www.jamestomasino.com",
           "https://tilde.zone/@tomasino",
           "https://bsky.app/profile/jamestomasino.bsky.social",
           "https://lobste.rs/u/jamestomasino",
@@ -63,7 +60,6 @@
           "https://boardgamegeek.com/user/tomasino",
           "https://app.thestorygraph.com/profile/jamestomasino",
           "https://liberapay.com/jamestomasino/",
-          "https://podcast.tomasino.org",
           "https://www.youtube.com/user/jamestomasino",
           "https://tilvids.com/c/tomasino_channel/videos",
           "https://www.linkedin.com/in/jamestomasino",
@@ -81,8 +77,58 @@
           "@type": "Occupation",
           "name": "Managing Partner"
         },
+        "owns": [
+          {
+            "@type": "CreativeWork",
+            "name": "Cosmic Voyage",
+            "description": "A shared, semi-collaborative science fiction universe with custom tools for writing and collaborating in the terminal.",
+            "url": "https://cosmic.voyage"
+          },
+          {
+            "@type": "SoftwareApplication",
+            "name": "Stutter",
+            "description": "A browser extension for rapid serial visual presentation (RSVP) reading of web content.",
+            "applicationCategory": "BrowserExtension",
+            "operatingSystem": "Chrome, Firefox",
+            "url": "https://ino.is/stutter"
+          },
+          {
+            "@type": "SoftwareApplication",
+            "name": "Stitchy",
+            "description": "A tool for generating rectangular crochet patterns from an image.",
+            "applicationCategory": "UtilityApplication",
+            "url": "https://ino.is/stitchy"
+          },
+          {
+            "@type": "SoftwareSourceCode",
+            "name": "scroll-frame",
+            "description": "An npm module to optimize scroll events.",
+            "programmingLanguage": "JavaScript",
+            "url": "https://github.com/jamestomasino/scroll-frame"
+          },
+          {
+            "@type": "PodcastSeries",
+            "name": "Solarpunk Prompts",
+            "description": "A podcast for writers and more.",
+            "url": "https://podcast.tomasino.org"
+          }
+        ]
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "tomasino (dot) org",
+        "url": "https://tomasino.org",
+        "description": "A collection of places to find me around the web",
         "datePublished": "2024-01-01",
-        "dateModified": "2024-01-01"
+        "dateModified": "2024-01-01",
+        "partOf": {
+          "@type": "WebSite",
+          "name": "tomasino (dot) org",
+          "url": "https://tomasino.org"
+        }
       }
     </script>
     <script type="application/ld+json">
@@ -101,13 +147,15 @@
     <link rel="authorization_endpoint" href="https://indieauth.com/auth">
     <link rel="token_endpoint" href="https://tokens.indieauth.com/token">
     <link rel="microsub" href="https://aperture.p3k.io/microsub/454">
+    <link rel="webmention" href="https://webmention.io/tomasino.org/webmention">
+    <link rel="micropub" href="https://aperture.p3k.io/micropub/454">
     <link rel="stylesheet" href="/styles.css" type="text/css">
   </head>
 
   <body class="h-card">
     <header>
       <h1>tomasino (dot) org</h1>
-      <p>Hi, my name is <strong><span class="p-name">James Tomasino</span></strong> and I do things on the internet.</p>
+      <p class="p-note">Hi, my name is <strong><span class="p-name">James Tomasino</span></strong> and I do things on the internet.</p>
     </header>
 
     <main>
@@ -116,9 +164,9 @@
         <p>My most <strong>passionate</strong> hobbies include retro-computing, fiction writing, travel, and hiking.</p>
         <ul>
           <li><a rel="me" class="u-url" href="https://blog.tomasino.org">Blog</a></li>
-          <li><a href="gopher://gopher.black">Gopher Site</a></li>
-          <li><a href="gemini://tilde.team/~tomasino">Gemini Site</a></li>
-          <li><a href="https://wiki.tomasino.org">Personal Wiki</a></li>
+          <li><a href="gopher://gopher.black" class="u-url">Gopher Site</a></li>
+          <li><a href="gemini://tilde.team/~tomasino" class="u-url">Gemini Site</a></li>
+          <li><a href="https://wiki.tomasino.org" class="u-url">Personal Wiki</a></li>
           <li><a rel="me" class="u-url" href="https://keybase.io/jamestomasino">Keybase Identity</a></li>
         </ul>
       </section>
@@ -141,8 +189,7 @@
           <li><a href="https://www.linkedin.com/in/jamestomasino">LinkedIn</a></li>
           <li><a rel="me" class="u-url" href="https://www.jamestomasino.com">Resume Website</a></li>
           <li><a href="https://stackoverflow.com/users/1041926/james-tomasino">StackOverflow</a></li>
-          <li><a href="https://meetings.tomasino.org/">Schedule a meeting with me</a></li>
-        </ul>
+         </ul>
       </section>
 
       <section>
@@ -155,10 +202,10 @@
           crochet patterns from an image.
         </p>
         <ul>
-          <li><a href="https://cosmic.voyage">Cosmic Voyage</a></li>
-          <li><a href="https://ino.is/stutter">Stutter - the RSVP Browser Extension</a></li>
-          <li><a href="https://ino.is/stitchy">Stitchy - crochet pattern generator</a></li>
-          <li><a href="https://github.com/jamestomasino/scroll-frame">Scroll-Frame - a npm module to optimize scroll events</a></li>
+          <li><a href="https://cosmic.voyage" class="u-url">Cosmic Voyage</a></li>
+          <li><a href="https://ino.is/stutter" class="u-url">Stutter - the RSVP Browser Extension</a></li>
+          <li><a href="https://ino.is/stitchy" class="u-url">Stitchy - crochet pattern generator</a></li>
+          <li><a href="https://github.com/jamestomasino/scroll-frame" class="u-url">Scroll-Frame - a npm module to optimize scroll events</a></li>
         </ul>
       </section>
 
@@ -195,7 +242,7 @@
       <section>
         <h2>Pictures / Video / Music</h2>
         <ul>
-          <li><a href="https://podcast.tomasino.org">Solarpunk Prompts - Podcast for writers and more</a></li>
+          <li><a href="https://podcast.tomasino.org" class="u-url">Solarpunk Prompts - Podcast for writers and more</a></li>
           <li><a rel="me" class="u-url" href="https://trakt.tv/users/jamestomasino">Trakt</a></li>
           <li><a href="https://soundcloud.com/jamestomasino">Soundcloud</a></li>
           <li><a href="https://tilvids.com/c/tomasino_channel/videos">Peertube</a></li>
@@ -260,8 +307,8 @@
         <ul>
           <li><a rel="me" class="u-url" href="https://www.kickstarter.com/profile/tomasino">Kickstarter</a></li>
           <li><a rel="me" class="u-url" href="https://www.thingiverse.com/jamestomasino">Thingiverse</a></li>
-          <li><a href="https://status.ino.is">Website Status</a></li>
-          <li><a href="https://tomasino.org/paste/">Local scratch-pad</a></li>
+          <li><a href="https://status.ino.is" class="u-url">Website Status</a></li>
+          <li><a href="https://tomasino.org/paste/" class="u-url">Local scratch-pad</a></li>
         </ul>
       </section>
     </main>
